@@ -18,14 +18,14 @@ const char* Buffer::Peek() const{
     return BeginPtr_() + readPos;
 }
 
-void EnsureWriteable(size_t len){
+void Buffer::EnsureWriteable(size_t len){
     if(WritableBytes() < len){
         MakeSpace(len);
     }
     assert(WritableBytes() >= len);
 }
 
-void HasWritten(size_t len){
+void Buffer::HasWritten(size_t len){
     //这行在原项目中没有，但我个人认为有必要判断输入的合法性
     //毕竟这是个public函数，客户的调用可能是错误的。
     assert(WritableBytes() >= len);
@@ -64,11 +64,11 @@ char* Buffer::BeginWriteConst(){
     return BeginPtr() + writePos;
 }
 
-void Append(const std::string& str){
+void Buffer::Append(const std::string& str){
     Append(str.c_str(), str.size());
 }
 
-void Append(const char* str, size_t len){
+void Buffer::Append(const char* str, size_t len){
     assert(str);
     EnsureWriteable(len);
     //用copy比自己写要好得多，可以看stl源码剖析中的详解
@@ -76,16 +76,16 @@ void Append(const char* str, size_t len){
     HasWritten(len);
 }
 
-void Append(const void* data, size_t len){
+void Buffer::Append(const void* data, size_t len){
     assert(data);
     Append(static_cast<const char*>(data), len);
 }
 
-void Append(const Buffer& buff){
+void Buffer::Append(const Buffer& buff){
     Append(buff.Peek(), buff.ReadableBytes());
 }
 
-ssize_t ReadFd(int fd, int* Errno){
+ssize_t Buffer::ReadFd(int fd, int* Errno){
     struct iovec input[2];
     char buff[READ_TEMP_BUF_MAX];
     const size_t writable = WritableBytes();    
@@ -107,7 +107,7 @@ ssize_t ReadFd(int fd, int* Errno){
     return len;
 }
 
-ssize_t WriteFd(int fd, int* Errno){
+ssize_t Buffer::WriteFd(int fd, int* Errno){
     int ret = 0;
     int temp;
     while(temp = write(fd, Peek(), ReadableBytes()) > 0){
@@ -122,15 +122,15 @@ ssize_t WriteFd(int fd, int* Errno){
     return ret;
 }
 
-char* BeginPtr_(){
+char* Buffer::BeginPtr_(){
     return &*buffer.begin();
 }
 
-const char* BeginPtr_() const{
+const char* Buffer::BeginPtr_() const{
     return &*buffer.cbegin();
 }
 
-void MakeSpace(size_t len){
+void Buffer::MakeSpace(size_t len){
     int step = PrependableBytes() + WritableBytes();
     if(step < len){
         buffer.resize(buffer.size() + len);
@@ -141,4 +141,15 @@ void MakeSpace(size_t len){
         writePos = readPos + readable;
         assert(readable == ReadableBytes());
     }
+}
+
+string Buffer::getnextline(){
+    char cur = buffer_[readPos];
+    int point = readPos;
+
+    while(readPos < writePos && cur != '\n'){
+        buffer_[readPos];
+        ++readPos;
+    }
+    return string(BeginPtr_() + point, BeginPtr_() + readPos - 2);
 }

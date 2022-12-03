@@ -22,7 +22,7 @@ private:
     void MakeSpace(size_t len);
 
 public:
-    Buffer(int initBuffSize = 1024);
+    explicit Buffer(int initBuffSize = 1024);
     ~Buffer() = default;
 
     size_t WritableBytes() const;
@@ -49,6 +49,8 @@ public:
 
     ssize_t ReadFd(int fd, int* Errno);
     ssize_t WriteFd(int fd, int* Errno);
+
+    string getnextline();
 };
 
 #endif
