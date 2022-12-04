@@ -54,7 +54,7 @@ void SqlConnPool::FreeConn(MYSQL* sql){
 void SqlConnPool::ClosePool(){
     auto que = Instance();
     MYSQL* item;
-    while(que->connQue.pop(item, 2)){
+    while(que->connQue.pop(item, 1) > 0){
         mysql_close(item);
     }
     mysql_library_end();
