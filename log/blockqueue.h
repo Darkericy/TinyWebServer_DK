@@ -50,6 +50,8 @@ public:
     bool pop(T& item, int timeout);
 
     void flush();
+
+    void reserve(size_t len);
 };
 
 template<class T>
@@ -171,6 +173,13 @@ bool BlockDeque<T>::pop(T& item, int timeout){
     deq.pop_front();
     condProducer.notify_one();
     return true;
+}
+
+template<typename T>
+void BlockDeque<T>::reserve(size_t len){
+    assert(len > 0);
+    std::lock_guard<std::mutex> locker(mtx);
+    capacity = len;
 }
 
 #endif
