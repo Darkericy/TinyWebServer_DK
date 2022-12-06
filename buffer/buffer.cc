@@ -151,5 +151,9 @@ string Buffer::getnextline(){
         buffer_[readPos];
         ++readPos;
     }
-    return string(BeginPtr_() + point, BeginPtr_() + readPos - 2);
+    int step = readPos;
+    if(step < writePos){
+        step -= 2;
+    }
+    return string(BeginPtr_() + point, BeginPtr_() + step);
 }
