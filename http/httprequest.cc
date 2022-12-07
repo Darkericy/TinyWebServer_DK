@@ -109,7 +109,7 @@ std::string HttpRequest::GetHead_v(const std::string& key) const{
     return string();
 }
 
-std::string HttpRequest::GerBody_v(const std::string& key) const{
+std::string HttpRequest::GetBody_v(const std::string& key) const{
     assert(key != "");
 
     if(post_.count(key) != 0){
@@ -162,4 +162,8 @@ std::string HttpRequest::url_decode_(const std::string& src){
 		}
 	}
 	return dst;
+}
+
+std::unordered_mao<std::string, std::string> HttpRequest::GetPost() const{
+    return post_;
 }

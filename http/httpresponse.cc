@@ -69,10 +69,8 @@ void HttpResponse::MakeResponse(Buffer& buff) {
         else if(!(mmFileStat_.st_mode & S_IROTH)) {
             code_ = 403;
         }
-        else if(code_ == -1) { 
-            code_ = 200; 
-        }
-    }else{
+    }
+    if(code_ == -1){
         code_ = 200;
     }
     ErrorHtml_();

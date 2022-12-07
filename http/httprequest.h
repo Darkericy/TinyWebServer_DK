@@ -49,7 +49,8 @@ public:
     std::string method() const;
     std::string version() const;
     std::string GetBody_v(const std::string& key) const;
-    std::string GerHead_v(const std::string& key) const;
+    std::string GetHead_v(const std::string& key) const;
+    std::unordered_map<std::string, std::string> GetPost() const;
 
     //这下面的函数用来返回HEAD中的内容
     bool IsKeepAlive() const;
