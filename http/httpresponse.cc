@@ -110,7 +110,7 @@ void HttpResponse::AddStateLine_(Buffer& buff) {
 
 void HttpResponse::AddHeader_(Buffer& buff) {
     buff.Append("Connection: ");
-    if(isKeepAlive_) {
+    if(isKeepAlive_ && code_ == 200) {
         buff.Append("keep-alive\r\n");
         buff.Append("keep-alive: max=6, timeout=120\r\n");
     } else{

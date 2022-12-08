@@ -2,6 +2,7 @@
 #define MISSION_H
 
 #include <unordered_map>
+#include <string>
 
 #include "../pool/sqlconnpool.h"
 #include "../pool/sqlconnRAII.h"
