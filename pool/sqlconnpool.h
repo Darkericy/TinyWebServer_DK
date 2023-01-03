@@ -24,6 +24,6 @@ public:
               const char* user, const char* pwd,
               const char* dbName, int connSize);
     void ClosePool();
-}
+};
 
 #endif

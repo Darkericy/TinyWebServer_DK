@@ -4,12 +4,15 @@
 #include <mutex>
 #include <deque>
 #include <condition_variable>
+//#include <string>
 
 template<class T>
 class BlockDeque{
+    using string = std::string;
+
     std::deque<T> deq;
     
-    size_t capacity;
+    size_t capacity_;
 
     std::mutex mtx;
 
@@ -23,7 +26,7 @@ public:
     explicit BlockDeque(size_t MaxCapacity = 1000);
     
     //这里不使用合成的析构函数比较好，因为我们还要管理锁的资源
-    ~BolockDeque();
+    ~BlockDeque();
 
     void clear();
 
@@ -55,7 +58,7 @@ public:
 };
 
 template<class T>
-BlockDeque<T>::BlockDeque(size_t MaxCapacity): capacity(MaxCapacity), isClose(false){
+BlockDeque<T>::BlockDeque(size_t MaxCapacity): capacity_(MaxCapacity), isClose(false){
     assert(MaxCapacity > 0);
 }
 
@@ -107,14 +110,14 @@ size_t BlockDeque<T>::size(){
 template<class T>
 size_t BlockDeque<T>::capacity(){
     std::lock_guard<std::mutex> locker(mtx);
-    return capacity;
+    return capacity_;
 }
 
 template<class T>
 void BlockDeque<T>::push_back(const T& item){
     std::unique_lock<std::mutex> locker(mtx);
     //不能调用类函数，否则出现死锁
-    while(deq.size() >= capacity){
+    while(deq.size() >= capacity_){
         condProducer.wait(locker);
     }
     deq.push_back(item);
@@ -124,7 +127,7 @@ void BlockDeque<T>::push_back(const T& item){
 template<class T>
 void BlockDeque<T>::push_front(const T& item){
     std::unique_lock<std::mutex> locker(mtx);
-    while(deq.size() >= capacity){
+    while(deq.size() >= capacity_){
         condProducer.wait(locker);
     }
     deq.push_front(item);
@@ -140,7 +143,7 @@ bool BlockDeque<T>::empty(){
 template<class T>
 bool BlockDeque<T>::full(){
     std::lock_guard<std::mutex> locker(mtx);
-    return deq.size() >= capacity;
+    return deq.size() >= capacity_;
 }
 
 template<class T>
@@ -162,7 +165,7 @@ template<class T>
 bool BlockDeque<T>::pop(T& item, int timeout){
     std::unique_lock<std::mutex> locker(mtx);
     while(deq.empty()){
-        if(condConsumer.wait_for(locker, std::chrono::(timeout) == std::cv_status::timeout){
+        if(condConsumer.wait_for(locker, std::chrono::seconds(timeout)) == std::cv_status::timeout){
             return false;
         }
         if(isClose){
@@ -179,7 +182,7 @@ template<typename T>
 void BlockDeque<T>::reserve(size_t len){
     assert(len > 0);
     std::lock_guard<std::mutex> locker(mtx);
-    capacity = len;
+    capacity_ = len;
 }
 
 #endif

@@ -1,12 +1,12 @@
-#include <heaptimer.h>
+#include "heaptimer.h"
 
 HeapTimer::HeapTimer(){
     heap.reserve(64);
 };
 
-void HeapTimer::adjust(int id, int timerout){
+void HeapTimer::adjust(int id, int timeout){
     assert(!heap.empty() && ref.count(id) > 0);
-    heap[ref[id]].expires = Clock:now() + MS(timeout);
+    heap[ref[id]].expires = Clock::now() + MS(timeout);
     shiftdown(ref[id], heap.size());
 }
 
@@ -16,7 +16,7 @@ void HeapTimer::push(int id, int timeOut, const TimeoutCallBack& cb){
     size_t i;
     if(ref.count(id)){
         i = ref[id];
-        heap[i].expires = Clock::now() + MS(timeout);
+        heap[i].expires = Clock::now() + MS(timeOut);
         heap[i].cb = cb;
         if(!shiftdown(i, heap.size())){
             shiftup(i);
@@ -24,7 +24,7 @@ void HeapTimer::push(int id, int timeOut, const TimeoutCallBack& cb){
     }else{
         i = heap.size();
         ref[id] = i;
-        heap.emplace_back(id, Clock::now() + MS(timeour), cb);
+        heap.push_back({id, Clock::now() + MS(timeOut), cb});
         shiftup(i);
     }
 }
@@ -76,7 +76,7 @@ int HeapTimer::GetNextTick(){
     return res;
 }
 
-void HeapTimer::del_(size_t i){
+void HeapTimer::del(size_t i){
     assert(!heap.empty() && i >= 0 && i < heap.size());
 
     SwapNode(i, heap.size() - 1);
@@ -90,7 +90,7 @@ void HeapTimer::del_(size_t i){
 void HeapTimer::shiftup(size_t i){
     assert(i >= 0 && heap.size() > i);
 
-    size_t j = max((i - 1) / 2, (size_t)0);
+    size_t j = std::max((i - 1) / 2, (size_t)0);
     while(j >= 0){
         if(heap[i] < heap[j]){
             SwapNode(i, j);
@@ -98,7 +98,7 @@ void HeapTimer::shiftup(size_t i){
             break;
         }
         i = j;
-        j = max((size_t)0, (i - 1) / 2);
+        j = std::max((size_t)0, (i - 1) / 2);
     }
 }
 
@@ -106,8 +106,8 @@ bool HeapTimer::shiftdown(size_t index, size_t n){
     assert(index >= 0 && heap.size() > index);
     assert(n >= 0 && heap.size() >= n);
 
-    int i = index;
-    int j = index * 2 + 1;
+    size_t i = index;
+    size_t j = index * 2 + 1;
     while(j < n){
         if(j + 1 < n && heap[j] > heap[j + 1]){
             ++j;

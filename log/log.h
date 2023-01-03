@@ -24,7 +24,7 @@ public:
     void write(int level, const char* format, ...);
     void flush();
 
-    int GerLevel();
+    int GetLevel();
     void SetLevel(int level);
     bool IsOpen(){
         return isOpen;
@@ -45,8 +45,6 @@ private:
 
     const char* path;
     const char* suffix;
-    
-    int MAX_LINES;
 
     int lineCount;
     int toDay;

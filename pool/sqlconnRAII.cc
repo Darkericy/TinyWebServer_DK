@@ -1,7 +1,7 @@
-#include "sql_method.h"
+#include "sqlconnRAII.h"
 
 M_sql::M_sql(){
-    link = SqlConnPool::Instance()->GerConn();
+    link = SqlConnPool::Instance()->GetConn();
 }
 
 M_sql::~M_sql(){

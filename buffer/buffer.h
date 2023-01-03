@@ -2,8 +2,8 @@
 #define BUFFER_H
 
 #include <iostream>
-#include <sts/uio.h> //readv writev
-#include <unistd>
+#include <sys/uio.h> //readv writev
+#include <unistd.h>
 #include <vector>
 #include <assert.h>
 #include <algorithm>
@@ -12,6 +12,7 @@
 
 class Buffer{
 private:
+    using string = std::string;
     const int READ_TEMP_BUFF_MAX = 65535;
 
     std::vector<char> buffer_;
