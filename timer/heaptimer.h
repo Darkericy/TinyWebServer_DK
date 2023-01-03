@@ -11,7 +11,7 @@
 using TimeoutCallBack = std::function<void()>;
 //这里使用steadyclock也是和原版的小区别，这是遵从了文档描述的建议
 using Clock = std::chrono::steady_clock;
-using MS = std::chrono::milliseconds MS;
+using MS = std::chrono::milliseconds;
 using TimeStamp = Clock::time_point;
 
 struct TimerNode{
@@ -21,7 +21,10 @@ struct TimerNode{
     bool operator < (const TimerNode& rhs){
         return expires < rhs.expires;
     }
-}
+    bool operator > (const TimerNode& rhs){
+        return expires > rhs.expires;
+    }
+};
 
 class HeapTimer{
     void del(size_t i);
@@ -53,7 +56,7 @@ public:
 
     void pop();
 
-    int GerNextTick();
+    int GetNextTick();
 };
 
 #endif
