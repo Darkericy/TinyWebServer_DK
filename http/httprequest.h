@@ -22,7 +22,6 @@ class HttpRequest{
     void splice_data_();
     std::string url_decode_(const std::string& src);
 
-    PARSE_STATE state_;
     std::string method_, path_, version_, body_;
     std::unordered_map<std::string, std::string> header_;
     std::unordered_map<std::string, std::string> post_;
@@ -54,6 +53,9 @@ public:
 
     //这下面的函数用来返回HEAD中的内容
     bool IsKeepAlive() const;
+
+private:
+    PARSE_STATE state_;
 };
 
 #endif

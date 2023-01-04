@@ -10,7 +10,7 @@ SqlConnPool* SqlConnPool::Instance(){
 }
 
 void SqlConnPool::Init(const char* host, int port,
-                       const char* user, const char* pwd, const char* dbName
+                       const char* user, const char* pwd, const char* dbName,
                        int connSize = 10){
     assert(connSize > 0);
     auto que = Instance();

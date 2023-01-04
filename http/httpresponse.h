@@ -18,7 +18,7 @@ public:
     ~HttpResponse();
 
     void Init(const std::string& srcDir, const std::string& path, 
-              const string& strFile, bool isStatic = true,
+              const std::string& strFile, bool isStatic = true,
               bool isKeepAlive = false, int code = -1);
     void MakeResponse(Buffer& buff);
     void UnmapFile();
@@ -44,7 +44,7 @@ private:
 
     char* mmFile_;
     struct stat mmFileStat_;
-    string strFile;     //动态文件的报文
+    std::string strFile;     //动态文件的报文
 
     static const std::unordered_map<std::string, std::string> SUFFIX_TYPE;
     static const std::unordered_map<int, std::string> CODE_STATUS;

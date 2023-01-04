@@ -16,7 +16,7 @@ void HttpRequest::Init() {
 
 bool HttpRequest::IsKeepAlive() const {
     if(header_.count("Connection") == 1) {
-        return header_["Connection"] == "keep-alive" && version_ == "1.1";
+        return header_.at("Connection") == "keep-alive" && version_ == "1.1";
     }
     return false;
 }
@@ -104,7 +104,7 @@ std::string HttpRequest::version() const{
 std::string HttpRequest::GetHead_v(const std::string& key) const{
     assert(key != "");
     if(header_.count(key) != 0){
-        return header_[key];
+        return header_.at(key);
     }
     return string();
 }
@@ -113,15 +113,15 @@ std::string HttpRequest::GetBody_v(const std::string& key) const{
     assert(key != "");
 
     if(post_.count(key) != 0){
-        return post_[key];
+        return post_.at(key);
     }
     return string();
 }
 
-std::string HttpRequest::splice_data_(){
+void HttpRequest::splice_data_(){
     assert(body_.size() > 0);
 
-    for(auto& c: data){
+    for(auto& c: body_){
         if(c == '&'){
             c = ' ';
         }
@@ -131,9 +131,9 @@ std::string HttpRequest::splice_data_(){
     while(input >> temp){
         auto index = temp.find("=");
         string key = temp.substr(index + 1);
-        key = url_decode(key);
+        key = url_decode_(key);
         string value = temp.substr(0, index);
-        value = url_decode(value);
+        value = url_decode_(value);
         post_[key] = value;
     }
 }
@@ -164,6 +164,6 @@ std::string HttpRequest::url_decode_(const std::string& src){
 	return dst;
 }
 
-std::unordered_mao<std::string, std::string> HttpRequest::GetPost() const{
+std::unordered_map<std::string, std::string> HttpRequest::GetPost() const{
     return post_;
 }

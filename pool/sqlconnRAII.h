@@ -17,6 +17,10 @@ private:
 public:
     M_sql();
     ~M_sql();
+
+    bool userAdd(const string& name, const string& pwd);
+
+    bool userVerify(const string& name, const string& pwd);
 };
 
 #endif

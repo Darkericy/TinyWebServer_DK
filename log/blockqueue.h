@@ -172,7 +172,7 @@ bool BlockDeque<T>::pop(T& item, int timeout){
             return false;
         }
     }
-    item = deq,front();
+    item = deq.front();
     deq.pop_front();
     condProducer.notify_one();
     return true;

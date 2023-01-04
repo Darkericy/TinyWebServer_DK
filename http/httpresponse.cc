@@ -37,9 +37,8 @@ const unordered_map<int, string> HttpResponse::CODE_PATH = {
 };
 
 //能用构造列表构造的成员就应该用列表构造。放在函数体里会白白丧失性能
-HttpResponse::HttpResponse(): code_(-1), path_(), stcDir(),
-    isKeepAlive_(false), isStatic_(true), mmFile_(nullptr),
-    mmFileStat_(), strFile(){}
+HttpResponse::HttpResponse(): code_(-1), isKeepAlive_(false), isStatic_(true),
+    mmFile_(nullptr), mmFileStat_(){}
 
 HttpResponse::~HttpResponse() {
     UnmapFile();
@@ -55,7 +54,7 @@ void HttpResponse::Init(const string& srcDir, const string& path,
     isStatic_ = isStatic;
     path_ = path;
     srcDir_ = srcDir;
-    strFile_ = strFile;
+    this->strFile = strFile;
     mmFile_ = nullptr;
     mmFileStat_ = { 0 };
 }
@@ -80,17 +79,17 @@ void HttpResponse::MakeResponse(Buffer& buff) {
 }
 
 char* HttpResponse::File() {
-    return isStatic ? mmFile_ : &strFile_[0];
+    return isStatic_ ? mmFile_ : &strFile[0];
 }
 
 size_t HttpResponse::FileLen() const {
-    return isStatic ? mmFileStat_.st_size : strFile_.size();
+    return isStatic_ ? mmFileStat_.st_size : strFile.size();
 }
 
 void HttpResponse::ErrorHtml_() {
     if(CODE_PATH.count(code_) == 1) {
-        path_ = CODE_PATH[code_];
-        isStatic = true;
+        path_ = CODE_PATH.at(code_);
+        isStatic_ = true;
         stat((srcDir_ + path_).c_str(), &mmFileStat_);
     }
 }
@@ -98,11 +97,11 @@ void HttpResponse::ErrorHtml_() {
 void HttpResponse::AddStateLine_(Buffer& buff) {
     string status;
     if(CODE_STATUS.count(code_) == 1) {
-        status = CODE_STATUS[code_];
+        status = CODE_STATUS.at(code_);
     }
     else {
         code_ = 400;
-        status = CODE_STATUS[400];
+        status = CODE_STATUS.at(400);
         ErrorHtml_();
     }
     buff.Append("HTTP/1.1 " + to_string(code_) + " " + status + "\r\n");
@@ -120,7 +119,7 @@ void HttpResponse::AddHeader_(Buffer& buff) {
 }
 
 void HttpResponse::AddContent_(Buffer& buff) {
-    if(isStatic){
+    if(isStatic_){
         int srcFd = open((srcDir_ + path_).c_str(), O_RDONLY);
         if(srcFd < 0) {
             ErrorContent(buff, "File NotFound!");
@@ -139,7 +138,7 @@ void HttpResponse::AddContent_(Buffer& buff) {
     }
 
     buff.Append("Content-length: " + 
-                isStatic_ ? to_string(mmFileStat_.st_size) : to_str(srcFile_.size()) + 
+                isStatic_ ? to_string(mmFileStat_.st_size) : to_string(strFile.size()) + 
                 "\r\n\r\n");
 }
 
@@ -158,7 +157,7 @@ string HttpResponse::GetFileType_() {
     }
     string suffix = path_.substr(idx);
     if(SUFFIX_TYPE.count(suffix) == 1) {
-        return SUFFIX_TYPE[suffix];
+        return SUFFIX_TYPE.at(suffix);
     }
     return "text/plain";
 }

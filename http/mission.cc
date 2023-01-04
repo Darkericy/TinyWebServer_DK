@@ -1,9 +1,9 @@
 #include "mission.h"
 
 void Mission::Init(const string& method, const string& url, int code, 
-                   const unordered_map<string, string> POST){
+                   const unordered_map<string, string>& POST){
     this.url = url;
-    this,method = method;
+    this,method_ = method;
     isStatic = true;
     this.code = code;
     post = POST;
@@ -14,44 +14,44 @@ void Mission::start(){
         return;
     }
 
-    (this->*method[me])(url);
+    (this->*method_[me])(url);
 }
 
 void Mission::Head(const string& uri){
     code = 501;
-    path = "";
+    path_ = "";
 }
 
 void Mission::Put(const string& uri){
     code = 501;
-    path = "";
+    path_ = "";
 }
 
 void Mission::Delete(const string& uri){
     code = 501;
-    path = "";
+    path_ = "";
 }
 
 void Mission::Connect(const string& uri){
     code = 501;
-    path = "";
+    path_ = "";
 }
 
 void Mission::Options(const string& uri){
     code = 501;
-    path = "";
+    path_ = "";
 }
 
 void Mission::Trace(const string& uri){
     code = 501;
-    path = "";
+    path_ = "";
 }
 
 void Mission::Get(const string& url){
     string cgiargs;
-    isStatic = parse_url(url, path, cgiargs);
+    isStatic = parse_url(url, path_, cgiargs);
     if(!isStatic){
-       (this->*dynamic[path])(cgiargs, strFile); 
+       (this->*dynamic.at(path_))(cgiargs, strFile); 
     }
 }
 
@@ -65,9 +65,9 @@ void Mission::Register(){
     string pwd = post["password"];
 
     if(mysql.userAdd(name, pwd)){
-        path = "/welcome.html";
+        path_ = "/welcome.html";
     }else{
-        path = "/error.html"
+        path_ = "/error.html";
     }
     isStatic = true;
 }
@@ -78,14 +78,14 @@ void Mission::Enter(){
     string pwd = post["password"];
 
     if(mysql.userVerify(name, pwd)){
-        path = "/welcome.html";
+        path_ = "/welcome.html";
     }else{
-        path = "/error.html";
+        path_ = "/error.html";
     }
     isStatic = true;
 }
 
-bool Mission::parse_uri(const string& uri, string& filename, string& cgiargs){
+bool Mission::parse_url(const string& uri, string& filename, string& cgiargs){
 	if(uri.find("cgi_bin") == string::npos){
         cgiargs = "";
         filename = "." + uri;
@@ -107,11 +107,11 @@ bool Mission::parse_uri(const string& uri, string& filename, string& cgiargs){
 }
 
 string Mission::GetPath() const{
-    return path;
+    return path_;
 }
 
 string Mission::GetStrFile() const{
-    return strFile;
+    return strFile_;
 }
 
 bool Mission::GetStatic() const{

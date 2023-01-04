@@ -5,7 +5,7 @@ char* HttpConn::srcDir;
 std::atomic<int> HttpConn::userCount;
 bool HttpConn::isET;
 
-HttpConn::HttpConn(): fd_(-1), addr_(), isClose(true) {}
+HttpConn::HttpConn(): fd_(-1), addr_(), isClose_(true) {}
 
 HttpConn::~HttpConn(){
     Close();
@@ -97,7 +97,7 @@ bool HttpConn::process() {
         mission_.Init(request_.method(), request_.path(), 400, request_.GetPost());
     }
     mission_.start();
-    response_.Init(srcDir, mission_.GetPath(), mission_.GetStrFile(), mission_.isStatic(),
+    response_.Init(srcDir, mission_.GetPath(), mission_.GetStrFile(), mission_.GetStatic(),
                    request_.IsKeepAlive(), mission_.GetCode());
 
     response_.MakeResponse(writeBuff_);

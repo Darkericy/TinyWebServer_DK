@@ -5,6 +5,7 @@
 #include <sys/uio.h>
 #include <arpa/inet.h>
 #include <errno.h>
+#include <atomic>
 
 #include "../log/log.h"
 #include "../pool/sqlconnRAII.h"

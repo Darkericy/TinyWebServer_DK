@@ -31,13 +31,13 @@ class Mission{
     unordered_map<string, Way> post_way;
     unordered_map<string, Dynamic> dynamic;
 
-    unordered_mao<string, string> post;
-    string url, strFile, method, path;
+    unordered_map<string, string> post;
+    string url, strFile_, method_, path_;
     bool isStatic;
     int code;
 
 public:
-    Mission():path(), strFile(), isStatic(true), code()
+    Mission():isStatic(true), code()
 	{
 		method["GET"] = &Mission::Get;
     	method["HEAD"] = &Mission::Head;
