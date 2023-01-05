@@ -1,5 +1,7 @@
 #include "buffer.h"
 
+//#define DEBUG
+
 Buffer::Buffer(int initBuffSize): buffer_(initBuffSize), readPos(0), writePos(0) {};
 
 size_t Buffer::WritableBytes() const{
@@ -96,6 +98,9 @@ ssize_t Buffer::ReadFd(int fd, int* Errno){
     input[1].iov_len = READ_TEMP_BUFF_MAX;
 
     const ssize_t len = readv(fd, input, 2);
+#ifdef DEBUG
+    std::cout << BeginWrite() << std::endl << buff << std::endl;
+#endif
     if(len < 0){
         *Errno = len;
     }else if(len <= static_cast<ssize_t>(writable)){
@@ -148,12 +153,18 @@ std::string Buffer::getnextline(){
     int point = readPos;
 
     while(readPos < writePos && cur != '\n'){
-        buffer_[readPos];
+        ++readPos;
+        cur = buffer_[readPos];
+    }
+    if(readPos < writePos){
         ++readPos;
     }
     int step = readPos;
     if(step < writePos){
         step -= 2;
     }
-    return std::string(BeginPtr_() + point, BeginPtr_() + step);
+
+    string temp(BeginPtr_() + point, BeginPtr_() + step);
+    //std::cout << "拿取的下一行为:" << temp << std::endl;
+    return temp;
 }

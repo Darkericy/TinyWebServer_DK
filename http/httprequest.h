@@ -6,6 +6,7 @@
 #include <string>
 #include <regex>
 #include <errno.h>
+#include <iostream>
 
 #include "../buffer/buffer.h"
 #include "../log/log.h"

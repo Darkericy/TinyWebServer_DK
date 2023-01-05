@@ -88,10 +88,11 @@ void Mission::Enter(){
 bool Mission::parse_url(const string& uri, string& filename, string& cgiargs){
 	if(uri.find("cgi_bin") == string::npos){
         cgiargs = "";
-        filename = "." + uri;
+        filename = uri;
         if(uri.size() == 1 && uri[0] == '/'){
             filename += "index.html";        
         }
+        //std::cout << filename << std::endl;
         return true;
     }else{
         auto ptr = uri.find('?');

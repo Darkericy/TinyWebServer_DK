@@ -1,6 +1,8 @@
 #include "httpconn.h"
 using namespace std;
 
+//#define DEBUG
+
 char* HttpConn::srcDir;
 std::atomic<int> HttpConn::userCount;
 bool HttpConn::isET;
@@ -49,14 +51,19 @@ int HttpConn::GetPort() const {
 }
 
 ssize_t HttpConn::read(int* saveErrno) {
+#ifdef DEBUG
+    LOG_INFO("调用httpconn中的read函数");
+#endif
     ssize_t len = -1;
     do {
-        len = readBuff_.ReadFd(fd_, saveErrno);
-        if (len <= 0) {
+        ssize_t temp = readBuff_.ReadFd(fd_, saveErrno);
+        if (temp <= 0) {
             break;
+        }else{
+            len += temp;
         }
     } while (isET);
-    return len;
+    return len == -1 ? -1 : len + 1;
 }
 
 ssize_t HttpConn::write(int* saveErrno) {
@@ -86,6 +93,9 @@ ssize_t HttpConn::write(int* saveErrno) {
 }
 
 bool HttpConn::process() {
+#ifdef DEBUG
+    LOG_INFO("调用httpconn的process函数");
+#endif
     request_.Init();
     if(readBuff_.ReadableBytes() <= 0) {
         return false;
@@ -105,6 +115,7 @@ bool HttpConn::process() {
     iov_[0].iov_base = const_cast<char*>(writeBuff_.Peek());
     iov_[0].iov_len = writeBuff_.ReadableBytes();
     iovCnt_ = 1;
+    //std::cout << iov_[0].iov_base << std::endl;
 
     /* 文件 */
     if(response_.FileLen() > 0  && response_.File()) {

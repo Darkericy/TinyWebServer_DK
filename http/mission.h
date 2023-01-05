@@ -3,6 +3,7 @@
 
 #include <unordered_map>
 #include <string>
+#include <iostream>
 
 #include "../pool/sqlconnpool.h"
 #include "../pool/sqlconnRAII.h"

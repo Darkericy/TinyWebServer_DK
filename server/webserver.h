@@ -9,6 +9,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include <iostream>
 
 #include "epoller.h"
 #include "../log/log.h" 

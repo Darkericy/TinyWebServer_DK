@@ -1,6 +1,8 @@
 #include "httprequest.h"
 using namespace std;
 
+//#define DEBUG
+
 const unordered_set<string> HttpRequest::DEFAULT_HTML{
             "/index", "/register", "/login",
              "/welcome", "/video", "/picture", };
@@ -22,15 +24,22 @@ bool HttpRequest::IsKeepAlive() const {
 }
 
 bool HttpRequest::parse(Buffer& buff) {
+#ifdef DEBUG
+    LOG_INFO("调用httprequest的parse");
+#endif
     if(buff.ReadableBytes() <= 0) {
         return false;
     }
     
     while(buff.ReadableBytes() && state_ != FINISH) {
         std::string line = buff.getnextline();
+#ifdef DEBUG
+        LOG_INFO("line的长度为:%d", line.size());
+#endif
         switch(state_)
         {
         case REQUEST_LINE:
+            //std::cout << "开始解析头部" << line << endl;
             if(!ParseRequestLine_(line)) {
                 return false;
             }
@@ -56,7 +65,8 @@ bool HttpRequest::ParseRequestLine_(const string& line) {
     regex patten("^([^ ]*) ([^ ]*) HTTP/([^ ]*)$");
     smatch subMatch;
     if(regex_search(line, subMatch, patten)) {
-        //这里的用法，可以根据c++ prime P654进行改写
+        //这里的用法，可以根据c++ prime P654进行改写i
+        //std::cout << "成功匹配请求" << std::endl;
         method_ = subMatch.str(1);
         path_ = subMatch.str(2);
         version_ = subMatch.str(3);

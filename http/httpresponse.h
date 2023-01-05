@@ -6,6 +6,7 @@
 #include <unistd.h>      // close
 #include <sys/stat.h>    // stat
 #include <sys/mman.h>    // mmap, munmap
+#include <iostream>
 
 #include "../buffer/buffer.h"
 #include "../log/log.h"

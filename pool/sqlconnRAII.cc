@@ -12,7 +12,7 @@ M_sql::~M_sql(){
 
 bool M_sql::userAdd(const string& name, const string& pwd)
 {
-		string sql = "insert into webserver(name, pwd) values ('" + name + "','" + pwd + "')";
+		string sql = "insert into usrinfo(name, pwd) values ('" + name + "','" + pwd + "')";
 
 		int ret = mysql_query(link, sql.c_str());
         LOG_INFO("新用户：\"%s\"加入", name);
@@ -28,7 +28,7 @@ bool M_sql::userAdd(const string& name, const string& pwd)
 
 bool M_sql::userVerify(const string& name, const string& pwd)
 {
-    string sql = "select name, pwd from webserver where Uname = '" + name + "'";
+    string sql = "select name, pwd from usrinfo where Uname = '" + name + "'";
     int k;
     if((k = mysql_query(link, sql.c_str()))){
         LOG_ERROR("数据库查询失败");

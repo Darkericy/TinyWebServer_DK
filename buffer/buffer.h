@@ -7,6 +7,7 @@
 #include <vector>
 #include <assert.h>
 #include <algorithm>
+#include <iostream>
 
 //用户缓冲区，不支持线程安全
 

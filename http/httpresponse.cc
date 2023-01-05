@@ -61,6 +61,7 @@ void HttpResponse::Init(const string& srcDir, const string& path,
 
 void HttpResponse::MakeResponse(Buffer& buff) {
     /* 判断请求的资源文件 */
+    //std::cout << srcDir_ + path_ << std::endl;
     if(isStatic_){
         if(stat((srcDir_ + path_).data(), &mmFileStat_) < 0 || S_ISDIR(mmFileStat_.st_mode)) {
             code_ = 404;
@@ -105,6 +106,7 @@ void HttpResponse::AddStateLine_(Buffer& buff) {
         ErrorHtml_();
     }
     buff.Append("HTTP/1.1 " + to_string(code_) + " " + status + "\r\n");
+    //std::cout << "响应头：" << buff.Peek() << std::endl; 
 }
 
 void HttpResponse::AddHeader_(Buffer& buff) {

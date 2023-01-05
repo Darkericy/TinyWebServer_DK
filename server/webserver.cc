@@ -1,5 +1,7 @@
 #include "webserver.h"
 
+//#define DEBUG
+
 using namespace std;
 
 WebServer::WebServer(
@@ -14,9 +16,10 @@ WebServer::WebServer(
     {
     srcDir_ = getcwd(nullptr, 256);
     assert(srcDir_);
-    strncat(srcDir_, "/resources/", 16);
+    strncat(srcDir_, "/resources", 16);
     HttpConn::userCount = 0;
     HttpConn::srcDir = srcDir_;
+    cout << "这里的路径为：" << HttpConn::srcDir << endl;
     SqlConnPool::Instance()->Init("localhost", sqlPort, sqlUser, sqlPwd, dbName, connPoolNum);
 
     InitEventMode_(trigMode);
@@ -142,11 +145,15 @@ void WebServer::DealListen_() {
             LOG_WARN("Clients is full!");
             return;
         }
+        cout << fd << endl;
         AddClient_(fd, addr);
     } while(listenEvent_ & EPOLLET);
 }
 
 void WebServer::DealRead_(HttpConn* client) {
+#ifdef DEBUG
+    LOG_INFO("调用WebServer中的DealRead函数");
+#endif
     assert(client);
     ExtentTime_(client);
     threadpool_->AddTask(std::bind(&WebServer::OnRead_, this, client));
@@ -168,6 +175,9 @@ void WebServer::OnRead_(HttpConn* client) {
     int ret = -1;
     int readErrno = 0;
     ret = client->read(&readErrno);
+#ifdef DEBUG
+    LOG_INFO("从客户端读取%d字节数据", ret);
+#endif
     if(ret <= 0 && readErrno != EAGAIN) {
         CloseConn_(client);
         return;
@@ -176,6 +186,9 @@ void WebServer::OnRead_(HttpConn* client) {
 }
 
 void WebServer::OnProcess(HttpConn* client) {
+#ifdef DEBUG
+    LOG_INFO("来到webserver的onprocess函数");
+#endif
     if(client->process()) {
         epoller_->ModFd(client->GetFd(), connEvent_ | EPOLLOUT);
     } else {
