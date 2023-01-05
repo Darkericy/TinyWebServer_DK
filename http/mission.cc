@@ -2,10 +2,10 @@
 
 void Mission::Init(const string& method, const string& url, int code, 
                    const unordered_map<string, string>& POST){
-    this.url = url;
-    this,method_ = method;
+    this->url = url;
+    this->method_ = method;
     isStatic = true;
-    this.code = code;
+    this->code = code;
     post = POST;
 }
 
@@ -14,7 +14,7 @@ void Mission::start(){
         return;
     }
 
-    (this->*method_[me])(url);
+    (this->*method.at(method_))(url);
 }
 
 void Mission::Head(const string& uri){
@@ -51,7 +51,7 @@ void Mission::Get(const string& url){
     string cgiargs;
     isStatic = parse_url(url, path_, cgiargs);
     if(!isStatic){
-       (this->*dynamic.at(path_))(cgiargs, strFile); 
+       (this->*dynamic.at(path_))(cgiargs, strFile_); 
     }
 }
 

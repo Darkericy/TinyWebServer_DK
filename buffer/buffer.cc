@@ -1,9 +1,9 @@
-#include <buffer.h>
+#include "buffer.h"
 
-Buffer::Buffer(int initBuffSize = 1024): buffer_(1024), readPos(0), writePos(0) {};
+Buffer::Buffer(int initBuffSize): buffer_(initBuffSize), readPos(0), writePos(0) {};
 
 size_t Buffer::WritableBytes() const{
-    return buffer_,size() - writePos;
+    return buffer_.size() - writePos; 
 }
 
 size_t Buffer::ReadableBytes() const{
@@ -29,12 +29,12 @@ void Buffer::HasWritten(size_t len){
     //这行在原项目中没有，但我个人认为有必要判断输入的合法性
     //毕竟这是个public函数，客户的调用可能是错误的。
     assert(WritableBytes() >= len);
-    WritePos += len;
+    writePos += len;
 }
 
 void Buffer::Retrieve(size_t len){
     assert(len <= ReadableBytes());
-    readPos_ += len;
+    readPos += len;
 }
 
 void Buffer::RetrieveUntil(const char* end){
@@ -60,8 +60,8 @@ const char* Buffer::BeginWriteConst() const{
     return BeginPtr_() + writePos;
 }
 
-char* Buffer::BeginWriteConst(){
-    return BeginPtr() + writePos;
+char* Buffer::BeginWrite(){
+    return BeginPtr_() + writePos;
 }
 
 void Buffer::Append(const std::string& str){
@@ -87,7 +87,7 @@ void Buffer::Append(const Buffer& buff){
 
 ssize_t Buffer::ReadFd(int fd, int* Errno){
     struct iovec input[2];
-    char buff[READ_TEMP_BUF_MAX];
+    char buff[READ_TEMP_BUFF_MAX];
     const size_t writable = WritableBytes();    
 
     input[0].iov_base = BeginWrite();
@@ -95,10 +95,10 @@ ssize_t Buffer::ReadFd(int fd, int* Errno){
     input[1].iov_base = buff;
     input[1].iov_len = READ_TEMP_BUFF_MAX;
 
-    cosnt ssize_t readv(fd, input, 2);
+    const ssize_t len = readv(fd, input, 2);
     if(len < 0){
         *Errno = len;
-    }else if(len <= writable){
+    }else if(len <= static_cast<ssize_t>(writable)){
         HasWritten(len);
     }else{
         writePos = buffer_.size();
@@ -109,8 +109,8 @@ ssize_t Buffer::ReadFd(int fd, int* Errno){
 
 ssize_t Buffer::WriteFd(int fd, int* Errno){
     int ret = 0;
-    int temp;
-    while(temp = write(fd, Peek(), ReadableBytes()) > 0){
+    int temp = write(fd, Peek(), ReadableBytes());
+    while(temp > 0){
         if(temp < 0){
             *Errno = temp;
             ret = temp;
@@ -123,27 +123,27 @@ ssize_t Buffer::WriteFd(int fd, int* Errno){
 }
 
 char* Buffer::BeginPtr_(){
-    return &*buffer.begin();
+    return &*buffer_.begin();
 }
 
 const char* Buffer::BeginPtr_() const{
-    return &*buffer.cbegin();
+    return &*buffer_.cbegin();
 }
 
 void Buffer::MakeSpace(size_t len){
-    int step = PrependableBytes() + WritableBytes();
+    size_t step = PrependableBytes() + WritableBytes();
     if(step < len){
-        buffer.resize(buffer.size() + len);
+        buffer_.resize(buffer_.size() + len);
     }else{
         size_t readable = ReadableBytes();
-        copy(BeginPtr_() + readPos, BeginWrite(), BeginPtr_());
+        std::copy(BeginPtr_() + readPos, BeginWrite(), BeginPtr_());
         readPos = 0;
         writePos = readPos + readable;
         assert(readable == ReadableBytes());
     }
 }
 
-string Buffer::getnextline(){
+std::string Buffer::getnextline(){
     char cur = buffer_[readPos];
     int point = readPos;
 
@@ -155,5 +155,5 @@ string Buffer::getnextline(){
     if(step < writePos){
         step -= 2;
     }
-    return string(BeginPtr_() + point, BeginPtr_() + step);
+    return std::string(BeginPtr_() + point, BeginPtr_() + step);
 }

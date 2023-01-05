@@ -124,7 +124,7 @@ void WebServer::AddClient_(int fd, sockaddr_in addr) {
     assert(fd > 0);
     users_[fd].init(fd, addr);
     if(timeoutMS_ > 0) {
-        timer_->add(fd, timeoutMS_, std::bind(&WebServer::CloseConn_, this, &users_[fd]));
+        timer_->push(fd, timeoutMS_, std::bind(&WebServer::CloseConn_, this, &users_[fd]));
     }
     epoller_->AddFd(fd, EPOLLIN | connEvent_);
     SetFdNonblock(fd);

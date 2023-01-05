@@ -5,7 +5,7 @@ const unordered_set<string> HttpRequest::DEFAULT_HTML{
             "/index", "/register", "/login",
              "/welcome", "/video", "/picture", };
 
-const string URLHEXMAP = "0123456789ABCDEF";
+const string HttpRequest::URLHEXMAP = "0123456789ABCDEF";
 
 void HttpRequest::Init() {
     method_ = path_ = version_ = body_ = "";

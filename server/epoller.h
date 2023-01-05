@@ -18,17 +18,17 @@ public:
 
     ~Epoller();
 
-    bool AddFd(int fd, unit32_t events);
+    bool AddFd(int fd, uint32_t events);
 
-    bool ModFd(int fd, unit32_t events);
+    bool ModFd(int fd, uint32_t events);
 
-    bool DefFd(int fd);
+    bool DelFd(int fd);
 
     int Wait(int timeoutMS = -1);
 
     int GetEventFd(size_t i) const;
 
-    unint32_t GetEvents(size_t i) const;
+    uint32_t GetEvents(size_t i) const;
 };
 
 #endif

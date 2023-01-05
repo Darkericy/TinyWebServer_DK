@@ -6,6 +6,8 @@
 #include <queue>
 #include <thread>
 #include <functional>
+#include <memory>
+
 class ThreadPool{
     //这种设计让我觉得和pimpl比较像，但是这里又不是，我不知道这样设计是不是有什么优点。
     //保留问题
@@ -14,13 +16,13 @@ class ThreadPool{
         std::condition_variable cond;
         bool isClosed;
         std::queue<std::function<void()>> tasks;
-    }
+    };
     std::shared_ptr<Pool> pool_;
 
 public:
     explicit ThreadPool(size_t threadCount = 8):pool_(std::make_shared<Pool>()){
-        for(int i = 0; i < threadCount; ++i){
-        std::thread([pool = pool_]{
+        for(size_t i = 0; i < threadCount; ++i){
+        std::thread([pool = pool_](){
                 std::unique_lock<std::mutex> locker(pool->mtx);
                 while(true){
                     if(!pool->tasks.empty()){
@@ -30,11 +32,11 @@ public:
                         locker.unlock();
                         task();
                         locker.lock();
-                        }else if(pool->isClosed){
+                    }else if(pool->isClosed){
                         break;
-                        }else{
+                    }else{
                         pool->cond.wait(locker);
-                        }
+                    }
                 }
             }).detach();
         }
@@ -49,7 +51,7 @@ public:
         if(pool_){
             {
                 std::lock_guard<std::mutex> locker(pool_->mtx);
-                pool->isClosed = true;
+                pool_->isClosed = true;
             }
             pool_->cond.notify_all();
         }
@@ -58,10 +60,10 @@ public:
     template<typename F>
         void AddTask(F&& task){
             {
-                std::lock_guard<std::mutex> locker(mtx);
-                pool->tasks.emplace(std::forward<F>(task));
+                std::lock_guard<std::mutex> locker(pool_->mtx);
+                pool_->tasks.emplace(std::forward<F>(task));
             }
-            pool->cond.notify_one();
+            pool_->cond.notify_one();
         }
 };
 

@@ -1,7 +1,7 @@
 #include "epoller.h"
 
 //这里epoll_creat参数512我不明白有没有什么特殊的意义
-Epoller::Epoller(int maxEvent): epollFd(epoll_creat(512)), events(maxEvent){
+Epoller::Epoller(int maxEvent): epollFd(epoll_create(512)), events(maxEvent){
     assert(epollFd >= 0 && events.size() > 0);
 }
 
@@ -15,16 +15,16 @@ bool Epoller::AddFd(int fd, uint32_t events){
     }
     epoll_event ev = {0};
     ev.data.fd = fd;
-    ev.events = evenets;
-    return 0 == epoll_cnl(epoolfd, EPOLL_CTL_ADD, fd, &ev);
+    ev.events = events;
+    return 0 == epoll_ctl(epollFd, EPOLL_CTL_ADD, fd, &ev);
 }
 
-bool Epoller::ModFd(int fd, unint32_t events){
+bool Epoller::ModFd(int fd, uint32_t events){
     if(fd < 0) return false;
     epoll_event ev = {0};
     ev.data.fd = fd;
     ev.events = events;
-    return 0 == epoll_ctl(epollfd, EPOLL_CTL_MOD, fd, &ev);
+    return 0 == epoll_ctl(epollFd, EPOLL_CTL_MOD, fd, &ev);
 }
 
 bool Epoller::DelFd(int fd) {
@@ -34,15 +34,15 @@ bool Epoller::DelFd(int fd) {
 }
 
 int Epoller::Wait(int timeoutMs) {
-    return epoll_wait(epollFd, &events_[0], static_cast<int>(events_.size()), timeoutMs);
+    return epoll_wait(epollFd, &events[0], static_cast<int>(events.size()), timeoutMs);
 }
 
 int Epoller::GetEventFd(size_t i) const {
-    assert(i < events_.size() && i >= 0);
-    return events_[i].data.fd;
+    assert(i < events.size() && i >= 0);
+    return events[i].data.fd;
 }
 
 uint32_t Epoller::GetEvents(size_t i) const {
-    assert(i < events_.size() && i >= 0);
-    return events_[i].events;
+    assert(i < events.size() && i >= 0);
+    return events[i].events;
 }
