@@ -138,9 +138,10 @@ void HttpResponse::AddContent_(Buffer& buff) {
         mmFile_ = (char*)mmRet;
         close(srcFd);
     }
-
+    
+    //std::cout << "content-length在这里" << std::endl;
     buff.Append("Content-length: " + 
-                isStatic_ ? to_string(mmFileStat_.st_size) : to_string(strFile.size()) + 
+                (isStatic_ ? to_string(mmFileStat_.st_size) : to_string(strFile.size())) + 
                 "\r\n\r\n");
 }
 

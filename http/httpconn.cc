@@ -115,7 +115,7 @@ bool HttpConn::process() {
     iov_[0].iov_base = const_cast<char*>(writeBuff_.Peek());
     iov_[0].iov_len = writeBuff_.ReadableBytes();
     iovCnt_ = 1;
-    //std::cout << iov_[0].iov_base << std::endl;
+    //std::cout << static_cast<char*>(iov_[0].iov_base) << std::endl;
 
     /* 文件 */
     if(response_.FileLen() > 0  && response_.File()) {

@@ -1,0 +1,501 @@
+2023-01-06 10:17:24[info] : ========== Server init ==========
+2023-01-06 10:17:24[info] : Port:2403, OpenLinger: false
+2023-01-06 10:17:24[info] : Listen Mode: ET, OpenConn Mode: ET
+2023-01-06 10:17:24[info] : LogSys level: 0
+2023-01-06 10:17:24[info] : srcDir: /home/dakericy/TinyWebServer_DK/resources
+2023-01-06 10:17:24[info] : SqlConnPool num: 12, ThreadPool num: 1
+2023-01-06 10:17:24[info] : ========== Server start ==========
+2023-01-06 10:17:35[info] : Client[6](192.168.47.2:55804) in, userCount:1
+2023-01-06 10:17:35[info] : Client[6] in!
+2023-01-06 10:17:35[debug]: [GET], [/], [1.1]
+2023-01-06 10:17:35[debug]: /
+2023-01-06 10:17:35[debug]: file path /home/dakericy/TinyWebServer_DK/resources/index.html
+2023-01-06 10:17:35[debug]: filesize:3148, 2  to 3250
+2023-01-06 10:17:35[error]: RequestLine Error
+2023-01-06 10:17:35[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:17:35[debug]: filesize:3146, 2  to 3220
+2023-01-06 10:17:35[info] : Client[6] quit!
+2023-01-06 10:17:35[info] : Client[6](192.168.47.2:55804) quit, UserCount:0
+2023-01-06 10:17:35[info] : Client[6](192.168.47.2:56060) in, userCount:1
+2023-01-06 10:17:35[info] : Client[6] in!
+2023-01-06 10:17:35[debug]: [GET], [/css/bootstrap.min.css], [1.1]
+2023-01-06 10:17:35[debug]: /css/bootstrap.min.css
+2023-01-06 10:17:35[debug]: file path /home/dakericy/TinyWebServer_DK/resources/css/bootstrap.min.css
+2023-01-06 10:17:35[debug]: filesize:121260, 2  to 121364
+2023-01-06 10:17:35[error]: RequestLine Error
+2023-01-06 10:17:35[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:17:35[debug]: filesize:3146, 2  to 3220
+2023-01-06 10:17:35[info] : Client[6] quit!
+2023-01-06 10:17:35[info] : Client[6](192.168.47.2:56060) quit, UserCount:0
+2023-01-06 10:17:35[info] : Client[6](192.168.47.2:57852) in, userCount:1
+2023-01-06 10:17:35[info] : Client[6] in!
+2023-01-06 10:17:35[debug]: [GET], [/css/animate.css], [1.1]
+2023-01-06 10:17:35[debug]: /css/animate.css
+2023-01-06 10:17:35[debug]: file path /home/dakericy/TinyWebServer_DK/resources/css/animate.css
+2023-01-06 10:17:35[debug]: filesize:72922, 2  to 73025
+2023-01-06 10:17:35[error]: RequestLine Error
+2023-01-06 10:17:35[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:17:35[debug]: filesize:3146, 2  to 3220
+2023-01-06 10:17:35[info] : Client[6] quit!
+2023-01-06 10:17:35[info] : Client[6](192.168.47.2:57852) quit, UserCount:0
+2023-01-06 10:17:35[info] : Client[6](192.168.47.2:58364) in, userCount:1
+2023-01-06 10:17:35[info] : Client[6] in!
+2023-01-06 10:17:35[info] : Client[7](192.168.47.2:58620) in, userCount:2
+2023-01-06 10:17:35[info] : Client[7] in!
+2023-01-06 10:17:35[info] : Client[8](192.168.47.2:59132) in, userCount:3
+2023-01-06 10:17:35[info] : Client[8] in!
+2023-01-06 10:17:35[info] : Client[9](192.168.47.2:59388) in, userCount:4
+2023-01-06 10:17:35[info] : Client[9] in!
+2023-01-06 10:17:35[info] : Client[10](192.168.47.2:58876) in, userCount:5
+2023-01-06 10:17:35[info] : Client[10] in!
+2023-01-06 10:17:35[debug]: [GET], [/css/magnific-popup.css], [1.1]
+2023-01-06 10:17:35[debug]: /css/magnific-popup.css
+2023-01-06 10:17:35[debug]: file path /home/dakericy/TinyWebServer_DK/resources/css/magnific-popup.css
+2023-01-06 10:17:35[debug]: filesize:6951, 2  to 7053
+2023-01-06 10:17:35[debug]: [GET], [/css/font-awesome.min.css], [1.1]
+2023-01-06 10:17:35[debug]: /css/font-awesome.min.css
+2023-01-06 10:17:35[debug]: file path /home/dakericy/TinyWebServer_DK/resources/css/font-awesome.min.css
+2023-01-06 10:17:35[debug]: filesize:27392, 2  to 27495
+2023-01-06 10:17:35[debug]: [GET], [/js/jquery.js], [1.1]
+2023-01-06 10:17:35[debug]: /js/jquery.js
+2023-01-06 10:17:35[debug]: file path /home/dakericy/TinyWebServer_DK/resources/js/jquery.js
+2023-01-06 10:17:35[debug]: filesize:85658, 2  to 85768
+2023-01-06 10:17:35[debug]: [GET], [/js/bootstrap.min.js], [1.1]
+2023-01-06 10:17:35[debug]: /js/bootstrap.min.js
+2023-01-06 10:17:35[debug]: file path /home/dakericy/TinyWebServer_DK/resources/js/bootstrap.min.js
+2023-01-06 10:17:35[debug]: filesize:36868, 2  to 36978
+2023-01-06 10:17:35[debug]: [GET], [/css/style.css], [1.1]
+2023-01-06 10:17:35[debug]: /css/style.css
+2023-01-06 10:17:35[debug]: file path /home/dakericy/TinyWebServer_DK/resources/css/style.css
+2023-01-06 10:17:35[debug]: filesize:9807, 2  to 9909
+2023-01-06 10:17:35[error]: RequestLine Error
+2023-01-06 10:17:35[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:17:35[debug]: filesize:3146, 2  to 3220
+2023-01-06 10:17:35[error]: RequestLine Error
+2023-01-06 10:17:35[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:17:35[debug]: filesize:3146, 2  to 3220
+2023-01-06 10:17:35[error]: RequestLine Error
+2023-01-06 10:17:35[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:17:35[debug]: filesize:3146, 2  to 3220
+2023-01-06 10:17:35[error]: RequestLine Error
+2023-01-06 10:17:35[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:17:35[debug]: filesize:3146, 2  to 3220
+2023-01-06 10:17:35[error]: RequestLine Error
+2023-01-06 10:17:35[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:17:35[debug]: filesize:3146, 2  to 3220
+2023-01-06 10:17:35[info] : Client[6] quit!
+2023-01-06 10:17:35[info] : Client[6](192.168.47.2:58364) quit, UserCount:4
+2023-01-06 10:17:35[info] : Client[7] quit!
+2023-01-06 10:17:35[info] : Client[7](192.168.47.2:58620) quit, UserCount:3
+2023-01-06 10:17:35[info] : Client[8] quit!
+2023-01-06 10:17:35[info] : Client[8](192.168.47.2:59132) quit, UserCount:2
+2023-01-06 10:17:35[info] : Client[9] quit!
+2023-01-06 10:17:35[info] : Client[9](192.168.47.2:59388) quit, UserCount:1
+2023-01-06 10:17:35[info] : Client[10] quit!
+2023-01-06 10:17:35[info] : Client[10](192.168.47.2:58876) quit, UserCount:0
+2023-01-06 10:17:36[info] : Client[6](192.168.47.2:61180) in, userCount:1
+2023-01-06 10:17:36[info] : Client[6] in!
+2023-01-06 10:17:36[debug]: [GET], [/js/smoothscroll.js], [1.1]
+2023-01-06 10:17:36[debug]: /js/smoothscroll.js
+2023-01-06 10:17:36[debug]: file path /home/dakericy/TinyWebServer_DK/resources/js/smoothscroll.js
+2023-01-06 10:17:36[debug]: filesize:4474, 2  to 4583
+2023-01-06 10:17:36[error]: RequestLine Error
+2023-01-06 10:17:36[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:17:36[debug]: filesize:3146, 2  to 3220
+2023-01-06 10:17:36[info] : Client[6] quit!
+2023-01-06 10:17:36[info] : Client[6](192.168.47.2:61180) quit, UserCount:0
+2023-01-06 10:17:36[info] : Client[6](192.168.47.2:61436) in, userCount:1
+2023-01-06 10:17:36[info] : Client[6] in!
+2023-01-06 10:17:36[info] : Client[7](192.168.47.2:61948) in, userCount:2
+2023-01-06 10:17:36[info] : Client[7] in!
+2023-01-06 10:17:36[info] : Client[8](192.168.47.2:62204) in, userCount:3
+2023-01-06 10:17:36[info] : Client[8] in!
+2023-01-06 10:17:36[info] : Client[9](192.168.47.2:62460) in, userCount:4
+2023-01-06 10:17:36[info] : Client[9] in!
+2023-01-06 10:17:36[info] : Client[10](192.168.47.2:61692) in, userCount:5
+2023-01-06 10:17:36[info] : Client[10] in!
+2023-01-06 10:17:36[debug]: [GET], [/js/jquery.magnific-popup.min.js], [1.1]
+2023-01-06 10:17:36[debug]: /js/jquery.magnific-popup.min.js
+2023-01-06 10:17:36[debug]: file path /home/dakericy/TinyWebServer_DK/resources/js/jquery.magnific-popup.min.js
+2023-01-06 10:17:36[debug]: filesize:20932, 2  to 21042
+2023-01-06 10:17:36[debug]: [GET], [/js/wow.min.js], [1.1]
+2023-01-06 10:17:36[debug]: /js/wow.min.js
+2023-01-06 10:17:36[debug]: file path /home/dakericy/TinyWebServer_DK/resources/js/wow.min.js
+2023-01-06 10:17:36[debug]: filesize:7082, 2  to 7191
+2023-01-06 10:17:36[debug]: [GET], [/js/custom.js], [1.1]
+2023-01-06 10:17:36[debug]: /js/custom.js
+2023-01-06 10:17:36[debug]: file path /home/dakericy/TinyWebServer_DK/resources/js/custom.js
+2023-01-06 10:17:36[debug]: filesize:1047, 2  to 1156
+2023-01-06 10:17:36[debug]: [GET], [/images/profile-image.jpg], [1.1]
+2023-01-06 10:17:36[debug]: /images/profile-image.jpg
+2023-01-06 10:17:36[debug]: file path /home/dakericy/TinyWebServer_DK/resources/images/profile-image.jpg
+2023-01-06 10:17:36[debug]: filesize:47176, 2  to 47280
+2023-01-06 10:17:36[debug]: [GET], [/js/magnific-popup-options.js], [1.1]
+2023-01-06 10:17:36[debug]: /js/magnific-popup-options.js
+2023-01-06 10:17:36[debug]: file path /home/dakericy/TinyWebServer_DK/resources/js/magnific-popup-options.js
+2023-01-06 10:17:36[debug]: filesize:1069, 2  to 1178
+2023-01-06 10:17:36[error]: RequestLine Error
+2023-01-06 10:17:36[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:17:36[debug]: filesize:3146, 2  to 3220
+2023-01-06 10:17:36[error]: RequestLine Error
+2023-01-06 10:17:36[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:17:36[debug]: filesize:3146, 2  to 3220
+2023-01-06 10:17:36[error]: RequestLine Error
+2023-01-06 10:17:36[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:17:36[debug]: filesize:3146, 2  to 3220
+2023-01-06 10:17:36[error]: RequestLine Error
+2023-01-06 10:17:36[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:17:36[debug]: filesize:3146, 2  to 3220
+2023-01-06 10:17:36[error]: RequestLine Error
+2023-01-06 10:17:36[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:17:36[debug]: filesize:3146, 2  to 3220
+2023-01-06 10:17:36[info] : Client[6] quit!
+2023-01-06 10:17:36[info] : Client[6](192.168.47.2:61436) quit, UserCount:4
+2023-01-06 10:17:36[info] : Client[7] quit!
+2023-01-06 10:17:36[info] : Client[7](192.168.47.2:61948) quit, UserCount:3
+2023-01-06 10:17:36[info] : Client[8] quit!
+2023-01-06 10:17:36[info] : Client[8](192.168.47.2:62204) quit, UserCount:2
+2023-01-06 10:17:36[info] : Client[9] quit!
+2023-01-06 10:17:36[info] : Client[9](192.168.47.2:62460) quit, UserCount:1
+2023-01-06 10:17:36[info] : Client[10] quit!
+2023-01-06 10:17:36[info] : Client[10](192.168.47.2:61692) quit, UserCount:0
+2023-01-06 10:17:36[info] : Client[6](192.168.47.2:63228) in, userCount:1
+2023-01-06 10:17:36[info] : Client[6] in!
+2023-01-06 10:17:36[debug]: [GET], [/images/profile-image.jpg], [1.1]
+2023-01-06 10:17:36[debug]: /images/profile-image.jpg
+2023-01-06 10:17:36[debug]: file path /home/dakericy/TinyWebServer_DK/resources/images/profile-image.jpg
+2023-01-06 10:17:36[debug]: filesize:47176, 2  to 47280
+2023-01-06 10:17:36[error]: RequestLine Error
+2023-01-06 10:17:36[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:17:36[debug]: filesize:3146, 2  to 3220
+2023-01-06 10:17:36[info] : Client[6] quit!
+2023-01-06 10:17:36[info] : Client[6](192.168.47.2:63228) quit, UserCount:0
+2023-01-06 10:17:36[info] : Client[6](192.168.47.2:63740) in, userCount:1
+2023-01-06 10:17:36[info] : Client[6] in!
+2023-01-06 10:17:36[debug]: [GET], [/images/favicon.ico], [1.1]
+2023-01-06 10:17:36[debug]: /images/favicon.ico
+2023-01-06 10:17:36[debug]: file path /home/dakericy/TinyWebServer_DK/resources/images/favicon.ico
+2023-01-06 10:17:36[debug]: filesize:60990, 2  to 61094
+2023-01-06 10:17:36[error]: RequestLine Error
+2023-01-06 10:17:36[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:17:36[debug]: filesize:3146, 2  to 3220
+2023-01-06 10:17:36[info] : Client[6] quit!
+2023-01-06 10:17:36[info] : Client[6](192.168.47.2:63740) quit, UserCount:0
+2023-01-06 10:17:36[info] : Client[6](192.168.47.2:63996) in, userCount:1
+2023-01-06 10:23:25[info] : ========== Server init ==========
+2023-01-06 10:23:25[info] : Port:2403, OpenLinger: false
+2023-01-06 10:23:25[info] : Listen Mode: ET, OpenConn Mode: ET
+2023-01-06 10:23:25[info] : LogSys level: 0
+2023-01-06 10:23:25[info] : srcDir: /home/dakericy/TinyWebServer_DK/resources
+2023-01-06 10:23:25[info] : SqlConnPool num: 12, ThreadPool num: 1
+2023-01-06 10:23:25[info] : ========== Server start ==========
+2023-01-06 10:23:29[info] : Client[6](192.168.47.2:8143) in, userCount:1
+2023-01-06 10:23:29[info] : Client[6] in!
+2023-01-06 10:23:29[debug]: [GET], [/], [1.1]
+2023-01-06 10:23:29[debug]: /
+2023-01-06 10:23:29[debug]: file path /home/dakericy/TinyWebServer_DK/resources/index.html
+2023-01-06 10:23:29[debug]: filesize:3148, 2  to 3270
+2023-01-06 10:23:29[error]: RequestLine Error
+2023-01-06 10:23:29[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:23:29[debug]: filesize:3146, 2  to 3240
+2023-01-06 10:23:29[info] : Client[6] quit!
+2023-01-06 10:23:29[info] : Client[6](192.168.47.2:8143) quit, UserCount:0
+2023-01-06 10:23:29[info] : Client[6](192.168.47.2:8399) in, userCount:1
+2023-01-06 10:23:29[info] : Client[6] in!
+2023-01-06 10:23:29[debug]: [GET], [/css/bootstrap.min.css], [1.1]
+2023-01-06 10:23:29[debug]: /css/bootstrap.min.css
+2023-01-06 10:23:29[debug]: file path /home/dakericy/TinyWebServer_DK/resources/css/bootstrap.min.css
+2023-01-06 10:23:29[debug]: filesize:121260, 2  to 121384
+2023-01-06 10:23:29[error]: RequestLine Error
+2023-01-06 10:23:29[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:23:29[debug]: filesize:3146, 2  to 3240
+2023-01-06 10:23:29[info] : Client[6] quit!
+2023-01-06 10:23:29[info] : Client[6](192.168.47.2:8399) quit, UserCount:0
+2023-01-06 10:23:29[info] : Client[6](192.168.47.2:10447) in, userCount:1
+2023-01-06 10:23:29[info] : Client[6] in!
+2023-01-06 10:23:29[debug]: [GET], [/css/animate.css], [1.1]
+2023-01-06 10:23:29[debug]: /css/animate.css
+2023-01-06 10:23:29[debug]: file path /home/dakericy/TinyWebServer_DK/resources/css/animate.css
+2023-01-06 10:23:29[debug]: filesize:72922, 2  to 73045
+2023-01-06 10:23:29[error]: RequestLine Error
+2023-01-06 10:23:29[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:23:29[debug]: filesize:3146, 2  to 3240
+2023-01-06 10:23:29[info] : Client[6] quit!
+2023-01-06 10:23:29[info] : Client[6](192.168.47.2:10447) quit, UserCount:0
+2023-01-06 10:23:30[info] : Client[6](192.168.47.2:11215) in, userCount:1
+2023-01-06 10:23:30[info] : Client[6] in!
+2023-01-06 10:23:30[info] : Client[7](192.168.47.2:11471) in, userCount:2
+2023-01-06 10:23:30[info] : Client[7] in!
+2023-01-06 10:23:30[info] : Client[8](192.168.47.2:11983) in, userCount:3
+2023-01-06 10:23:30[info] : Client[8] in!
+2023-01-06 10:23:30[info] : Client[9](192.168.47.2:11727) in, userCount:4
+2023-01-06 10:23:30[info] : Client[9] in!
+2023-01-06 10:23:30[info] : Client[10](192.168.47.2:12239) in, userCount:5
+2023-01-06 10:23:30[info] : Client[10] in!
+2023-01-06 10:23:30[debug]: [GET], [/css/magnific-popup.css], [1.1]
+2023-01-06 10:23:30[debug]: /css/magnific-popup.css
+2023-01-06 10:23:30[debug]: file path /home/dakericy/TinyWebServer_DK/resources/css/magnific-popup.css
+2023-01-06 10:23:30[debug]: filesize:6951, 2  to 7073
+2023-01-06 10:23:30[debug]: [GET], [/css/font-awesome.min.css], [1.1]
+2023-01-06 10:23:30[debug]: /css/font-awesome.min.css
+2023-01-06 10:23:30[debug]: file path /home/dakericy/TinyWebServer_DK/resources/css/font-awesome.min.css
+2023-01-06 10:23:30[debug]: filesize:27392, 2  to 27515
+2023-01-06 10:23:30[debug]: [GET], [/js/jquery.js], [1.1]
+2023-01-06 10:23:30[debug]: /js/jquery.js
+2023-01-06 10:23:30[debug]: file path /home/dakericy/TinyWebServer_DK/resources/js/jquery.js
+2023-01-06 10:23:30[debug]: filesize:85658, 2  to 85788
+2023-01-06 10:23:30[debug]: [GET], [/css/style.css], [1.1]
+2023-01-06 10:23:30[debug]: /css/style.css
+2023-01-06 10:23:30[debug]: file path /home/dakericy/TinyWebServer_DK/resources/css/style.css
+2023-01-06 10:23:30[debug]: filesize:9807, 2  to 9929
+2023-01-06 10:23:30[debug]: [GET], [/js/bootstrap.min.js], [1.1]
+2023-01-06 10:23:30[debug]: /js/bootstrap.min.js
+2023-01-06 10:23:30[debug]: file path /home/dakericy/TinyWebServer_DK/resources/js/bootstrap.min.js
+2023-01-06 10:23:30[debug]: filesize:36868, 2  to 36998
+2023-01-06 10:23:30[error]: RequestLine Error
+2023-01-06 10:23:30[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:23:30[debug]: filesize:3146, 2  to 3240
+2023-01-06 10:23:30[error]: RequestLine Error
+2023-01-06 10:23:30[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:23:30[debug]: filesize:3146, 2  to 3240
+2023-01-06 10:23:30[error]: RequestLine Error
+2023-01-06 10:23:30[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:23:30[debug]: filesize:3146, 2  to 3240
+2023-01-06 10:23:30[error]: RequestLine Error
+2023-01-06 10:23:30[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:23:30[debug]: filesize:3146, 2  to 3240
+2023-01-06 10:23:30[error]: RequestLine Error
+2023-01-06 10:23:30[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:23:30[debug]: filesize:3146, 2  to 3240
+2023-01-06 10:23:30[info] : Client[6] quit!
+2023-01-06 10:23:30[info] : Client[6](192.168.47.2:11215) quit, UserCount:4
+2023-01-06 10:23:30[info] : Client[7] quit!
+2023-01-06 10:23:30[info] : Client[7](192.168.47.2:11471) quit, UserCount:3
+2023-01-06 10:23:30[info] : Client[8] quit!
+2023-01-06 10:23:30[info] : Client[8](192.168.47.2:11983) quit, UserCount:2
+2023-01-06 10:23:30[info] : Client[9] quit!
+2023-01-06 10:23:30[info] : Client[9](192.168.47.2:11727) quit, UserCount:1
+2023-01-06 10:23:30[info] : Client[10] quit!
+2023-01-06 10:23:30[info] : Client[10](192.168.47.2:12239) quit, UserCount:0
+2023-01-06 10:23:30[info] : Client[6](192.168.47.2:13775) in, userCount:1
+2023-01-06 10:23:30[info] : Client[6] in!
+2023-01-06 10:23:30[debug]: [GET], [/js/wow.min.js], [1.1]
+2023-01-06 10:23:30[debug]: /js/wow.min.js
+2023-01-06 10:23:30[debug]: file path /home/dakericy/TinyWebServer_DK/resources/js/wow.min.js
+2023-01-06 10:23:30[debug]: filesize:7082, 2  to 7211
+2023-01-06 10:23:30[error]: RequestLine Error
+2023-01-06 10:23:30[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:23:30[debug]: filesize:3146, 2  to 3240
+2023-01-06 10:23:30[info] : Client[6] quit!
+2023-01-06 10:23:30[info] : Client[6](192.168.47.2:13775) quit, UserCount:0
+2023-01-06 10:23:30[info] : Client[6](192.168.47.2:14287) in, userCount:1
+2023-01-06 10:23:30[info] : Client[6] in!
+2023-01-06 10:23:30[info] : Client[7](192.168.47.2:14031) in, userCount:2
+2023-01-06 10:23:30[info] : Client[7] in!
+2023-01-06 10:23:30[info] : Client[8](192.168.47.2:14543) in, userCount:3
+2023-01-06 10:23:30[info] : Client[8] in!
+2023-01-06 10:23:30[debug]: [GET], [/images/profile-image.jpg], [1.1]
+2023-01-06 10:23:30[debug]: /images/profile-image.jpg
+2023-01-06 10:23:30[debug]: file path /home/dakericy/TinyWebServer_DK/resources/images/profile-image.jpg
+2023-01-06 10:23:30[debug]: filesize:47176, 2  to 47300
+2023-01-06 10:23:30[error]: RequestLine Error
+2023-01-06 10:23:30[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:23:30[debug]: filesize:3146, 2  to 3240
+2023-01-06 10:23:30[info] : Client[7] quit!
+2023-01-06 10:23:30[info] : Client[7](192.168.47.2:14031) quit, UserCount:2
+2023-01-06 10:23:30[debug]: [GET], [/images/favicon.ico], [1.1]
+2023-01-06 10:23:30[debug]: /images/favicon.ico
+2023-01-06 10:23:30[debug]: file path /home/dakericy/TinyWebServer_DK/resources/images/favicon.ico
+2023-01-06 10:23:30[debug]: filesize:60990, 2  to 61114
+2023-01-06 10:23:30[error]: RequestLine Error
+2023-01-06 10:23:30[debug]: file path /home/dakericy/TinyWebServer_DK/resources/400.html
+2023-01-06 10:23:30[debug]: filesize:3146, 2  to 3240
+2023-01-06 10:23:30[info] : Client[6] quit!
+2023-01-06 10:23:30[info] : Client[6](192.168.47.2:14287) quit, UserCount:1
+2023-01-06 10:24:30[info] : Client[9] quit!
+2023-01-06 10:24:30[info] : Client[10] quit!
+2023-01-06 10:24:30[info] : Client[8] quit!
+2023-01-06 10:24:30[info] : Client[8](192.168.47.2:14543) quit, UserCount:0
+2023-01-06 10:24:30[info] : Client[7] quit!
+2023-01-06 10:28:36[info] : ========== Server init ==========
+2023-01-06 10:28:36[info] : Port:2403, OpenLinger: false
+2023-01-06 10:28:36[info] : Listen Mode: ET, OpenConn Mode: ET
+2023-01-06 10:28:36[info] : LogSys level: 0
+2023-01-06 10:28:36[info] : srcDir: /home/dakericy/TinyWebServer_DK/resources
+2023-01-06 10:28:36[info] : SqlConnPool num: 12, ThreadPool num: 1
+2023-01-06 10:28:36[info] : ========== Server start ==========
+2023-01-06 10:28:39[info] : Client[6](192.168.47.2:209) in, userCount:1
+2023-01-06 10:28:39[info] : Client[6] in!
+2023-01-06 10:28:39[info] : Client[7](192.168.47.2:65488) in, userCount:2
+2023-01-06 10:28:39[info] : Client[7] in!
+2023-01-06 10:28:39[debug]: [GET], [/], [1.1]
+2023-01-06 10:28:39[debug]: /
+2023-01-06 10:28:39[debug]: file path /home/dakericy/TinyWebServer_DK/resources/index.html
+2023-01-06 10:28:39[debug]: filesize:723, 2  to 844
+2023-01-06 10:28:39[error]: RequestLine Error
+2023-01-06 10:28:39[debug]: filesize:723, 1  to 221
+2023-01-06 10:28:39[info] : Client[7] quit!
+2023-01-06 10:28:39[info] : Client[7](192.168.47.2:65488) quit, UserCount:1
+2023-01-06 10:28:39[debug]: [GET], [/favicon.ico], [1.1]
+2023-01-06 10:28:39[debug]: /favicon.ico
+2023-01-06 10:28:39[debug]: file path /home/dakericy/TinyWebServer_DK/resources/favicon.ico
+2023-01-06 10:28:39[debug]: filesize:4286, 2  to 4409
+2023-01-06 10:28:39[error]: RequestLine Error
+2023-01-06 10:28:39[debug]: filesize:4286, 1  to 221
+2023-01-06 10:28:39[info] : Client[6] quit!
+2023-01-06 10:28:39[info] : Client[6](192.168.47.2:209) quit, UserCount:0
+2023-01-06 10:28:40[info] : Client[6](192.168.47.2:465) in, userCount:1
+2023-01-06 10:28:40[info] : Client[6] in!
+2023-01-06 10:30:35[info] : ========== Server init ==========
+2023-01-06 10:30:35[info] : Port:2403, OpenLinger: false
+2023-01-06 10:30:35[info] : Listen Mode: ET, OpenConn Mode: ET
+2023-01-06 10:30:35[info] : LogSys level: 0
+2023-01-06 10:30:35[info] : srcDir: /home/dakericy/TinyWebServer_DK/resources
+2023-01-06 10:30:35[info] : SqlConnPool num: 12, ThreadPool num: 1
+2023-01-06 10:30:35[info] : ========== Server start ==========
+2023-01-06 10:30:39[info] : Client[6](192.168.47.2:39377) in, userCount:1
+2023-01-06 10:30:39[info] : Client[6] in!
+2023-01-06 10:30:39[debug]: [POST], [/5], [1.1]
+2023-01-06 10:33:01[info] : ========== Server init ==========
+2023-01-06 10:33:01[info] : Port:2403, OpenLinger: false
+2023-01-06 10:33:01[info] : Listen Mode: ET, OpenConn Mode: ET
+2023-01-06 10:33:01[info] : LogSys level: 0
+2023-01-06 10:33:01[info] : srcDir: /home/dakericy/TinyWebServer_DK/resources
+2023-01-06 10:33:01[info] : SqlConnPool num: 12, ThreadPool num: 1
+2023-01-06 10:33:01[info] : ========== Server start ==========
+2023-01-06 10:33:06[info] : Client[6](192.168.47.2:27877) in, userCount:1
+2023-01-06 10:33:06[info] : Client[6] in!
+2023-01-06 10:33:06[debug]: [GET], [/], [1.1]
+2023-01-06 10:33:06[debug]: /
+2023-01-06 10:33:06[debug]: file path /home/dakericy/TinyWebServer_DK/resources/judge.html
+2023-01-06 10:33:06[debug]: filesize:586, 2  to 707
+2023-01-06 10:33:06[error]: RequestLine Error
+2023-01-06 10:33:06[debug]: filesize:586, 1  to 221
+2023-01-06 10:33:06[info] : Client[6] quit!
+2023-01-06 10:33:06[info] : Client[6](192.168.47.2:27877) quit, UserCount:0
+2023-01-06 10:33:07[info] : Client[6](192.168.47.2:28133) in, userCount:1
+2023-01-06 10:33:07[info] : Client[6] in!
+2023-01-06 10:33:07[info] : Client[7](192.168.47.2:28389) in, userCount:2
+2023-01-06 10:33:07[info] : Client[7] in!
+2023-01-06 10:36:17[info] : ========== Server init ==========
+2023-01-06 10:36:17[info] : Port:2403, OpenLinger: false
+2023-01-06 10:36:17[info] : Listen Mode: ET, OpenConn Mode: ET
+2023-01-06 10:36:17[info] : LogSys level: 0
+2023-01-06 10:36:17[info] : srcDir: /home/dakericy/TinyWebServer_DK/resources
+2023-01-06 10:36:17[info] : SqlConnPool num: 12, ThreadPool num: 1
+2023-01-06 10:36:17[info] : ========== Server start ==========
+2023-01-06 10:36:28[info] : Client[6](192.168.47.2:59872) in, userCount:1
+2023-01-06 10:36:28[info] : Client[6] in!
+2023-01-06 10:36:28[info] : 调用WebServer中的DealRead函数
+2023-01-06 10:36:28[info] : 从客户端读取657字节数据
+2023-01-06 10:36:28[info] : 来到webserver的onprocess函数
+2023-01-06 10:36:28[debug]: [GET], [/], [1.1]
+2023-01-06 10:36:28[debug]: /
+2023-01-06 10:36:28[debug]: file path /home/dakericy/TinyWebServer_DK/resources/judge.html
+2023-01-06 10:36:28[debug]: filesize:586, 2  to 707
+2023-01-06 10:36:28[info] : 来到webserver的onprocess函数
+2023-01-06 10:36:28[error]: RequestLine Error
+2023-01-06 10:36:28[debug]: filesize:586, 1  to 221
+2023-01-06 10:36:28[info] : Client[6] quit!
+2023-01-06 10:36:28[info] : Client[6](192.168.47.2:59872) quit, UserCount:0
+2023-01-06 10:36:29[info] : Client[6](192.168.47.2:60128) in, userCount:1
+2023-01-06 10:36:29[info] : Client[6] in!
+2023-01-06 10:36:30[info] : Client[7](192.168.47.2:60384) in, userCount:2
+2023-01-06 10:36:30[info] : Client[7] in!
+2023-01-06 10:36:30[info] : 调用WebServer中的DealRead函数
+2023-01-06 10:36:30[info] : 从客户端读取824字节数据
+2023-01-06 10:36:30[info] : 来到webserver的onprocess函数
+2023-01-06 10:40:20[info] : ========== Server init ==========
+2023-01-06 10:40:20[info] : Port:2403, OpenLinger: false
+2023-01-06 10:40:20[info] : Listen Mode: ET, OpenConn Mode: ET
+2023-01-06 10:40:20[info] : LogSys level: 0
+2023-01-06 10:40:20[info] : srcDir: /home/dakericy/TinyWebServer_DK/resources
+2023-01-06 10:40:20[info] : SqlConnPool num: 12, ThreadPool num: 1
+2023-01-06 10:40:20[info] : ========== Server start ==========
+2023-01-06 10:40:25[info] : Client[6](192.168.47.2:1762) in, userCount:1
+2023-01-06 10:40:25[info] : Client[6] in!
+2023-01-06 10:40:25[info] : 调用WebServer中的DealRead函数
+2023-01-06 10:40:25[info] : 从客户端读取657字节数据
+2023-01-06 10:40:25[info] : 来到webserver的onprocess函数
+2023-01-06 10:40:25[debug]: [GET], [/], [1.1]
+2023-01-06 10:40:25[debug]: /
+2023-01-06 10:40:25[debug]: file path /home/dakericy/TinyWebServer_DK/resources/judge.html
+2023-01-06 10:40:25[debug]: filesize:586, 2  to 707
+2023-01-06 10:40:25[info] : 来到webserver的onprocess函数
+2023-01-06 10:40:25[error]: RequestLine Error
+2023-01-06 10:40:25[debug]: filesize:586, 1  to 221
+2023-01-06 10:40:25[info] : Client[6] quit!
+2023-01-06 10:40:25[info] : Client[6](192.168.47.2:1762) quit, UserCount:0
+2023-01-06 10:40:26[info] : Client[6](192.168.47.2:2018) in, userCount:1
+2023-01-06 10:40:26[info] : Client[6] in!
+2023-01-06 10:40:27[info] : Client[7](192.168.47.2:2274) in, userCount:2
+2023-01-06 10:40:27[info] : Client[7] in!
+2023-01-06 10:40:28[info] : 调用WebServer中的DealRead函数
+2023-01-06 10:40:28[info] : 从客户端读取824字节数据
+2023-01-06 10:40:28[info] : 来到webserver的onprocess函数
+2023-01-06 10:40:28[debug]: [POST], [/0], [1.1]
+2023-01-06 10:44:10[info] : ========== Server init ==========
+2023-01-06 10:44:10[info] : Port:2403, OpenLinger: false
+2023-01-06 10:44:10[info] : Listen Mode: ET, OpenConn Mode: ET
+2023-01-06 10:44:10[info] : LogSys level: 0
+2023-01-06 10:44:10[info] : srcDir: /home/dakericy/TinyWebServer_DK
+2023-01-06 10:44:10[info] : SqlConnPool num: 12, ThreadPool num: 1
+2023-01-06 10:44:10[info] : ========== Server start ==========
+2023-01-06 10:44:17[info] : Client[6](192.168.47.2:16842) in, userCount:1
+2023-01-06 10:44:17[info] : Client[6] in!
+2023-01-06 10:44:17[debug]: [GET], [/], [1.1]
+2023-01-06 10:44:17[debug]: /
+2023-01-06 10:44:17[debug]: file path /home/dakericy/TinyWebServer_DK/home.html
+2023-01-06 10:44:17[debug]: filesize:4293, 2  to 4415
+2023-01-06 10:44:17[error]: RequestLine Error
+2023-01-06 10:44:17[debug]: filesize:4293, 1  to 221
+2023-01-06 10:44:17[info] : Client[6] quit!
+2023-01-06 10:44:17[info] : Client[6](192.168.47.2:16842) quit, UserCount:0
+2023-01-06 10:44:17[info] : Client[6](192.168.47.2:17098) in, userCount:1
+2023-01-06 10:44:17[info] : Client[6] in!
+2023-01-06 10:44:17[debug]: [GET], [/images/background.jpg], [1.1]
+2023-01-06 10:44:17[debug]: /images/background.jpg
+2023-01-06 10:44:17[debug]: filesize:0, 1  to 217
+2023-01-06 10:44:17[error]: RequestLine Error
+2023-01-06 10:44:17[debug]: filesize:0, 1  to 217
+2023-01-06 10:44:17[info] : Client[6] quit!
+2023-01-06 10:44:17[info] : Client[6](192.168.47.2:17098) quit, UserCount:0
+2023-01-06 10:44:18[info] : Client[6](192.168.47.2:18122) in, userCount:1
+2023-01-06 10:44:18[info] : Client[6] in!
+2023-01-06 10:44:20[debug]: [GET], [/register.html], [1.1]
+2023-01-06 10:44:20[debug]: /register.html
+2023-01-06 10:44:20[debug]: file path /home/dakericy/TinyWebServer_DK/register.html
+2023-01-06 10:44:20[debug]: filesize:6654, 2  to 6776
+2023-01-06 10:44:20[error]: RequestLine Error
+2023-01-06 10:44:20[debug]: filesize:6654, 1  to 221
+2023-01-06 10:44:20[info] : Client[6] quit!
+2023-01-06 10:44:20[info] : Client[6](192.168.47.2:18122) quit, UserCount:0
+2023-01-06 10:44:20[info] : Client[6](192.168.47.2:19402) in, userCount:1
+2023-01-06 10:44:20[info] : Client[6] in!
+2023-01-06 10:44:20[debug]: [GET], [/images/background.jpg], [1.1]
+2023-01-06 10:44:20[debug]: /images/background.jpg
+2023-01-06 10:44:20[debug]: filesize:0, 1  to 217
+2023-01-06 10:44:20[error]: RequestLine Error
+2023-01-06 10:44:20[debug]: filesize:0, 1  to 217
+2023-01-06 10:44:20[info] : Client[6] quit!
+2023-01-06 10:44:20[info] : Client[6](192.168.47.2:19402) quit, UserCount:0
+2023-01-06 10:44:23[info] : Client[6](192.168.47.2:21706) in, userCount:1
+2023-01-06 10:44:23[info] : Client[6] in!
+2023-01-06 10:44:23[info] : Client[7](192.168.47.2:21450) in, userCount:2
+2023-01-06 10:44:23[info] : Client[7] in!
+2023-01-06 10:44:23[debug]: [GET], [/home.html], [1.1]
+2023-01-06 10:44:23[debug]: /home.html
+2023-01-06 10:44:23[debug]: file path /home/dakericy/TinyWebServer_DK/home.html
+2023-01-06 10:44:23[debug]: filesize:4293, 2  to 4415
+2023-01-06 10:44:23[error]: RequestLine Error
+2023-01-06 10:44:23[debug]: filesize:4293, 1  to 221
+2023-01-06 10:44:23[info] : Client[7] quit!
+2023-01-06 10:44:23[info] : Client[7](192.168.47.2:21450) quit, UserCount:1
+2023-01-06 10:44:23[debug]: [GET], [/images/background.jpg], [1.1]
+2023-01-06 10:44:23[debug]: /images/background.jpg
+2023-01-06 10:44:23[debug]: filesize:0, 1  to 217
+2023-01-06 10:44:23[error]: RequestLine Error
+2023-01-06 10:44:23[debug]: filesize:0, 1  to 217
+2023-01-06 10:44:23[info] : Client[6] quit!
+2023-01-06 10:44:23[info] : Client[6](192.168.47.2:21706) quit, UserCount:0
+2023-01-06 10:44:24[info] : Client[6](192.168.47.2:22218) in, userCount:1

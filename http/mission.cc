@@ -90,7 +90,7 @@ bool Mission::parse_url(const string& uri, string& filename, string& cgiargs){
         cgiargs = "";
         filename = uri;
         if(uri.size() == 1 && uri[0] == '/'){
-            filename += "index.html";        
+            filename += "home.html";        
         }
         //std::cout << filename << std::endl;
         return true;

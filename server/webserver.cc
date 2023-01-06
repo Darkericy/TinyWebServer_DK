@@ -16,7 +16,6 @@ WebServer::WebServer(
     {
     srcDir_ = getcwd(nullptr, 256);
     assert(srcDir_);
-    strncat(srcDir_, "/resources", 16);
     HttpConn::userCount = 0;
     HttpConn::srcDir = srcDir_;
     cout << "这里的路径为：" << HttpConn::srcDir << endl;
@@ -145,7 +144,7 @@ void WebServer::DealListen_() {
             LOG_WARN("Clients is full!");
             return;
         }
-        cout << fd << endl;
+        //cout << fd << endl;
         AddClient_(fd, addr);
     } while(listenEvent_ & EPOLLET);
 }

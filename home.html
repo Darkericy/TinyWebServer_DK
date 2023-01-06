@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta http-equiv="Content-Type" content="text/html: charset=utf-8"/>
+    <title>login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+         
+        html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: url(images/background.jpg) no-repeat 0px 0px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+        }
+         
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+         
+        #loginDiv {
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            background-color: rgb(32,178,170);
+            box-shadow: 7px 7px 17px rgb(32,178,170);
+            border-radius: 300px;
+        }
+         
+        #loginDiv:hover{  
+           filter: grayscale(60%);
+        }  
+ 
+        input{
+            text-align: center;
+            border:none; 
+            background-color: rgba(255, 255, 255);
+            width: 200px;
+            
+        }
+ 
+        #L_login {
+            border-color: cornsilk;
+            background-color: rgb(100,178,170);
+            color: aliceblue;
+            border-style: hidden;
+            border-radius: 5px;
+            width: 100px;
+            height: 31px;
+            font-size: 16px;
+        }
+ 
+        #L_register {
+            border-color: cornsilk;
+            background-color: rgb(100,178,170);
+            color: aliceblue;
+            border-style: hidden;
+            border-radius: 5px;
+            width: 100px;
+            height: 31px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+ 
+<body>
+    <div id="loginDiv">
+        <form action="login" id="form" method="post">
+            <table>
+                <h2 style="text-align: center; color: rgb(250, 250, 250);">立即登录</h2></br>
+                <tr><td style="text-align: center; color: rgb(255, 255, 255);">用户名</td></tr>
+                <tr><td><input class="line" type="text" id="L_user" name="l_user"></td></tr>
+                <tr><td style="text-align: center; color: rgb(255, 255, 255);">密码</td></tr>
+                <tr><td > <input class="line" type="password" placeholder="密码长度至少为6位" id="L_pwd" name="l_pwd"></td></tr>
+           </table>
+          </br>
+         <div style="text-align: center;margin-top: 15px;">
+            <p><button id="L_login" name="l_login" onclick=javascrtpt:jump1()>登陆</button></p>
+            <input type="button" id="L_register" value="注册" onclick=javascrtpt:jump2()>
+          </div>
+        </form>
+    </div>
+    <script>
+        L_pwd.onchange = function(){
+		var L_pwd = this.value;
+		var reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,}$/;
+		if(!reg.test(L_pwd)){
+            alert("密码长度要大于6位，由数字和字母组成,请重新输入！");
+            return false;  
+		}
+	    }
+ 
+        var user=localStorage.getItem("user");
+        var password=localStorage.getItem("password");
+        console.log("user:"+user);
+        console.log("pwd:"+password);
+ 
+       function jump1(){
+            console.log(document.getElementById("L_user").value);
+            console.log(+document.getElementById("L_pwd").value);
+ 
+            var User = document.getElementById("L_user");  
+            var Password = document.getElementById("L_pwd");
+ 
+            if (user==document.getElementById("L_user").value && password==document.getElementById("L_pwd").value){
+               alert("登录成功，点击确定进入");
+               window.location.href="main.html";
+            }
+            else if(Password.value =="") {            
+                    alert("密码不能为空！");            
+                    return false;            
+                }   
+            else{
+               alert("已发送请求");
+               return false;  
+           }
+        }
+        function jump2(){
+           window.location.href="register.html";
+        }
+    </script>
+</body>
+</html>
