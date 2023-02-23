@@ -19,7 +19,7 @@ WebServer::WebServer(
     HttpConn::userCount = 0;
     HttpConn::srcDir = srcDir_;
     cout << "这里的路径为：" << HttpConn::srcDir << endl;
-    SqlConnPool::Instance()->Init("localhost", sqlPort, sqlUser, sqlPwd, dbName, connPoolNum);
+    SqlConnPool::Instance()->Init("127.0.0.1", sqlPort, sqlUser, sqlPwd, dbName, connPoolNum);
 
     InitEventMode_(trigMode);
     if(!InitSocket_()) { isClose_ = true;}

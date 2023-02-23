@@ -611,3 +611,89 @@
 2023-02-23 21:03:34[info] : Client[6] in!
 2023-02-23 21:03:34[debug]: Body:r_user=daker&r_age=20&sex=m&belong=company&r_pwd=zxcv12&r_repwd=zxcv12, len:70
 2023-02-23 21:03:34[debug]: [POST], [/adduser], [1.1]
+2023-02-23 22:28:55[info] : ========== Server init ==========
+2023-02-23 22:28:55[info] : Port:2403, OpenLinger: false
+2023-02-23 22:28:55[info] : Listen Mode: ET, OpenConn Mode: ET
+2023-02-23 22:28:55[info] : LogSys level: 0
+2023-02-23 22:28:55[info] : srcDir: /home/dakericy/TinyWebServer_DK
+2023-02-23 22:28:55[info] : SqlConnPool num: 12, ThreadPool num: 8
+2023-02-23 22:28:55[info] : ========== Server start ==========
+2023-02-23 22:29:10[info] : Client[6](192.168.47.2:8675) in, userCount:1
+2023-02-23 22:29:10[info] : Client[6] in!
+2023-02-23 22:29:10[debug]: [GET], [/], [1.1]
+2023-02-23 22:29:10[debug]: /
+2023-02-23 22:29:10[debug]: file path /home/dakericy/TinyWebServer_DK/home.html
+2023-02-23 22:29:10[debug]: filesize:4293, 2  to 4415
+2023-02-23 22:29:10[error]: RequestLine Error
+2023-02-23 22:29:10[debug]: file path /home/dakericy/TinyWebServer_DK/400.html
+2023-02-23 22:29:10[debug]: filesize:3146, 2  to 3240
+2023-02-23 22:29:10[info] : Client[6] quit!
+2023-02-23 22:29:10[info] : Client[6](192.168.47.2:8675) quit, UserCount:0
+2023-02-23 22:29:10[info] : Client[6](192.168.47.2:8931) in, userCount:1
+2023-02-23 22:29:10[info] : Client[6] in!
+2023-02-23 22:29:10[debug]: [GET], [/images/background.jpg], [1.1]
+2023-02-23 22:29:10[debug]: /images/background.jpg
+2023-02-23 22:29:10[debug]: file path /home/dakericy/TinyWebServer_DK/404.html
+2023-02-23 22:29:10[debug]: filesize:3149, 2  to 3241
+2023-02-23 22:29:10[error]: RequestLine Error
+2023-02-23 22:29:10[debug]: file path /home/dakericy/TinyWebServer_DK/404.html
+2023-02-23 22:29:10[debug]: filesize:3149, 2  to 3241
+2023-02-23 22:29:10[info] : Client[6] quit!
+2023-02-23 22:29:10[info] : Client[6](192.168.47.2:8931) quit, UserCount:0
+2023-02-23 22:29:12[info] : Client[6](192.168.47.2:9443) in, userCount:1
+2023-02-23 22:29:12[info] : Client[6] in!
+2023-02-23 22:29:12[debug]: [GET], [/register.html], [1.1]
+2023-02-23 22:29:12[debug]: /register.html
+2023-02-23 22:29:12[debug]: file path /home/dakericy/TinyWebServer_DK/register.html
+2023-02-23 22:29:12[debug]: filesize:6654, 2  to 6776
+2023-02-23 22:29:12[error]: RequestLine Error
+2023-02-23 22:29:12[debug]: file path /home/dakericy/TinyWebServer_DK/400.html
+2023-02-23 22:29:12[debug]: filesize:3146, 2  to 3240
+2023-02-23 22:29:12[info] : Client[6] quit!
+2023-02-23 22:29:12[info] : Client[6](192.168.47.2:9443) quit, UserCount:0
+2023-02-23 22:29:13[info] : Client[6](192.168.47.2:10979) in, userCount:1
+2023-02-23 22:29:13[info] : Client[6] in!
+2023-02-23 22:29:13[debug]: [GET], [/images/background.jpg], [1.1]
+2023-02-23 22:29:13[debug]: /images/background.jpg
+2023-02-23 22:29:13[debug]: file path /home/dakericy/TinyWebServer_DK/404.html
+2023-02-23 22:29:13[debug]: filesize:3149, 2  to 3241
+2023-02-23 22:29:13[error]: RequestLine Error
+2023-02-23 22:29:13[debug]: file path /home/dakericy/TinyWebServer_DK/404.html
+2023-02-23 22:29:13[debug]: filesize:3149, 2  to 3241
+2023-02-23 22:29:13[info] : Client[6] quit!
+2023-02-23 22:29:13[info] : Client[6](192.168.47.2:10979) quit, UserCount:0
+2023-02-23 22:29:24[info] : Client[6](192.168.47.2:15587) in, userCount:1
+2023-02-23 22:29:24[info] : Client[6] in!
+2023-02-23 22:29:24[debug]: Body:r_user=daker&r_age=20&sex=m&belong=company&r_pwd=zxcv12&r_repwd=zxcv12, len:70
+2023-02-23 22:29:24[debug]: [POST], [/adduser], [1.1]
+2023-02-23 22:32:42[info] : ========== Server init ==========
+2023-02-23 22:32:42[info] : Port:2403, OpenLinger: false
+2023-02-23 22:32:42[info] : Listen Mode: ET, OpenConn Mode: ET
+2023-02-23 22:32:42[info] : LogSys level: 0
+2023-02-23 22:45:11[info] : ========== Server init ==========
+2023-02-23 22:45:11[info] : Port:2403, OpenLinger: false
+2023-02-23 22:45:11[info] : Listen Mode: ET, OpenConn Mode: ET
+2023-02-23 22:45:11[info] : LogSys level: 0
+2023-02-23 22:45:11[info] : srcDir: /home/dakericy/TinyWebServer_DK
+2023-02-23 22:45:11[info] : SqlConnPool num: 12, ThreadPool num: 8
+2023-02-23 22:45:11[info] : ========== Server start ==========
+2023-02-23 22:45:19[info] : Client[18](192.168.47.2:23528) in, userCount:1
+2023-02-23 22:45:19[info] : Client[18] in!
+2023-02-23 22:45:19[debug]: Body:r_user=daker&r_age=20&sex=m&belong=company&r_pwd=zxcv12&r_repwd=zxcv12, len:70
+2023-02-23 22:45:19[debug]: [POST], [/adduser], [1.1]
+2023-02-23 22:45:19[debug]: /adduser
+2023-02-23 22:45:19[info] : 新用户："�"加入
+2023-02-23 22:45:19[debug]: file path /home/dakericy/TinyWebServer_DK/main.html
+2023-02-23 22:45:19[debug]: filesize:6160, 2  to 6282
+2023-02-23 22:45:19[debug]: [GET], [/images.jpg], [1.1]
+2023-02-23 22:45:19[debug]: /images.jpg
+2023-02-23 22:45:19[debug]: file path /home/dakericy/TinyWebServer_DK/images.jpg
+2023-02-23 22:45:19[debug]: filesize:830759, 2  to 830884
+2023-02-23 22:45:19[error]: RequestLine Error
+2023-02-23 22:45:19[debug]: file path /home/dakericy/TinyWebServer_DK/400.html
+2023-02-23 22:45:19[debug]: filesize:3146, 2  to 3240
+2023-02-23 22:45:19[info] : Client[18] quit!
+2023-02-23 22:45:19[info] : Client[18](192.168.47.2:23528) quit, UserCount:0
+2023-02-23 22:45:20[info] : Client[18](192.168.47.2:23784) in, userCount:1
+2023-02-23 22:45:20[info] : Client[18] in!
+2023-02-23 22:45:20[info] : Client[19](192.168.47.2:24296) in, userCount:2

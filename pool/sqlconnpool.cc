@@ -73,6 +73,7 @@
 //}
 
 #include "sqlconnpool.h"
+#include <iostream>
 using namespace std;
 
 SqlConnPool::SqlConnPool() {
@@ -101,6 +102,7 @@ void SqlConnPool::Init(const char* host, int port,
             user, pwd,
             dbName, port, nullptr, 0);
         if (!sql) {
+            std::cout << "这里的问题" << std::endl;
             LOG_ERROR("MySql Connect error!");
         }
         connQue_.push(sql);
