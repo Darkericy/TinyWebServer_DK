@@ -1,15 +1,15 @@
-#include "sqlconnpool.h"
+#include "SqlConnPool.h"
 //这里的namespace可能应该只是个摆设，所以我先把他注释掉
 //using namespace std;
 
-sqlconnpool::sqlconnpool():connQue(10){}
+SqlConnPool::SqlConnPool():connQue(10){}
 
-sqlconnpool* sqlconnpool::Instance(){
-    static sqlconnpool connPool;
+SqlConnPool* SqlConnPool::Instance(){
+    static SqlConnPool connPool;
     return &connPool;
 }
 
-void sqlconnpool::Init(const char* host, int port,
+void SqlConnPool::Init(const char* host, int port,
                        const char* user, const char* pwd, const char* dbName,
                        int connSize = 10){
     assert(connSize > 0);
@@ -32,11 +32,11 @@ void sqlconnpool::Init(const char* host, int port,
     }
 }
 
-MYSQL* sqlconnpool::GetConn(){
+MYSQL* SqlConnPool::GetConn(){
     MYSQL* sql = nullptr;
     auto que = Instance();
     if(que->connQue.empty()){
-        LOG_WARN("sqlconnpool busy!");
+        LOG_WARN("SqlConnPool busy!");
         return nullptr;
     }
 
@@ -50,12 +50,12 @@ MYSQL* sqlconnpool::GetConn(){
     return sql;
 }
 
-void sqlconnpool::FreeConn(MYSQL* sql){
+void SqlConnPool::FreeConn(MYSQL* sql){
     assert(sql);
     Instance()->connQue.push_back(sql);
 }
 
-void sqlconnpool::ClosePool(){
+void SqlConnPool::ClosePool(){
     auto que = Instance();
     MYSQL* item;
     while(que->connQue.pop(item, 1) > 0){
@@ -64,10 +64,10 @@ void sqlconnpool::ClosePool(){
     mysql_library_end();
 }
 
-int sqlconnpool::GetFreeConnCount(){
+int SqlConnPool::GetFreeConnCount(){
     return Instance()->connQue.size();
 }
 
-sqlconnpool::~sqlconnpool(){
+SqlConnPool::~SqlConnPool(){
     ClosePool();
 }
