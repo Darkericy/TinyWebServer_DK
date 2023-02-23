@@ -13,18 +13,18 @@ class sqlconnpool{
     sqlconnpool();
     ~sqlconnpool();
 
-    BlockDeque<MYSQL*> connque;
+    BlockDeque<MYSQL*> connQue;
 public:
-    static sqlconnpool *instance();
+    static sqlconnpool *Instance();
 
-    MYSQL* getconn();
-    void freeconn(MYSQL* conn);
-    int getfreeconncount();
+    MYSQL* GetConn();
+    void FreeConn(MYSQL* conn);
+    int GetFreeConnCount();
 
-    void init(const char* host, int port,
+    void Init(const char* host, int port,
               const char* user, const char* pwd,
               const char* dbname, int connsize);
-    void closepool();
+    void ClosePool();
 };
 
 #endif
