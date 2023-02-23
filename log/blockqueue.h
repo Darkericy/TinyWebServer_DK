@@ -6,6 +6,8 @@
 #include <condition_variable>
 //#include <string>
 
+#include <iostream>
+
 template<class T>
 class BlockDeque{
     using string = std::string;
@@ -155,6 +157,7 @@ bool BlockDeque<T>::pop(T& item){
             return false;
         }
     }
+    //std::cout << "到这里至少说明这里还勉强没有事情" << std::endl;
     item = deq.front();
     deq.pop_front();
     condProducer.notify_one();

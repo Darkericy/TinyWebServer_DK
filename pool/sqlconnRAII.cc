@@ -12,8 +12,12 @@ M_sql::~M_sql(){
 
 bool M_sql::userAdd(const string& name, const string& pwd)
 {
+    cout << "来到useradd" << " " << name << " " << pwd << endl;
 		string sql = "insert into usrinfo(name, pwd) values ('" + name + "','" + pwd + "')";
 
+        if(!link){
+            cout << "数据库连接有误" << endl;
+        }
 		int ret = mysql_query(link, sql.c_str());
         LOG_INFO("新用户：\"%s\"加入", name);
 		if (ret < 0)
@@ -28,7 +32,7 @@ bool M_sql::userAdd(const string& name, const string& pwd)
 
 bool M_sql::userVerify(const string& name, const string& pwd)
 {
-    string sql = "select name, pwd from usrinfo where Uname = '" + name + "'";
+    string sql = "select name, pwd from usrinfo where name = '" + name + "'";
     int k;
     if((k = mysql_query(link, sql.c_str()))){
         LOG_ERROR("数据库查询失败");

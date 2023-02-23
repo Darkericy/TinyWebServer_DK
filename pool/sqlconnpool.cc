@@ -41,7 +41,11 @@ MYSQL* SqlConnPool::GetConn(){
     }
 
     if(!que->connQue.pop(sql)){
+        std::cout << "是这里吗" << std::endl;
         return nullptr;
+    }
+    if(!sql){
+        std::cout << "为什么这里不行" << std::endl;
     }
     return sql;
 }

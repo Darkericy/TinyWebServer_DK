@@ -1,5 +1,5 @@
 CXX = g++
-CFLAGS = -std=c++14 -O2 -Wall -g 
+CFLAGS = -std=c++17 -O2 -Wall -g 
 
 TARGET = DK_server
 OBJS = ./log/*.cc ./pool/*.cc ./timer/*.cc \

@@ -140,10 +140,10 @@ void HttpRequest::splice_data_(){
     string temp;
     while(input >> temp){
         auto index = temp.find("=");
-        string key = temp.substr(index + 1);
-        key = url_decode_(key);
-        string value = temp.substr(0, index);
+        string value = temp.substr(index + 1);
         value = url_decode_(value);
+        string key = temp.substr(0, index);
+        key = url_decode_(key);
         post_[key] = value;
     }
 }

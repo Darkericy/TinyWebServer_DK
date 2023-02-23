@@ -48,7 +48,7 @@ public:
     	method["CONNECT"] = &Mission::Connect;
     	method["OPTIONS"] = &Mission::Options;
         method["TRACE"] = &Mission::Trace;
-        post_way["/register"] = &Mission::Register;
+        post_way["/adduser"] = &Mission::Register;
         post_way["/login"] = &Mission::Enter;
 	};
 
