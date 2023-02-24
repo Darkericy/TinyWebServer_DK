@@ -31,6 +31,8 @@ void HttpConn::Close() {
         userCount--;
         close(fd_);
         LOG_INFO("Client[%d](%s:%d) quit, UserCount:%d", fd_, GetIP(), GetPort(), (int)userCount);
+    }else{
+        LOG_INFO("预想成真");
     }
 }
 

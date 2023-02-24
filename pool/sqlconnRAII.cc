@@ -12,7 +12,7 @@ M_sql::~M_sql(){
 
 bool M_sql::userAdd(const string& name, const string& pwd)
 {
-    cout << "来到useradd" << " " << name << " " << pwd << endl;
+    //cout << "来到useradd" << " " << name << " " << pwd << endl;
 		string sql = "insert into usrinfo(name, pwd) values ('" + name + "','" + pwd + "')";
 
         if(!link){

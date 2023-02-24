@@ -61,19 +61,19 @@ void Mission::Post(const string& url){
 
 void Mission::Register(){
     M_sql mysql;
-    for(const auto& [name, value]: post){
-        cout << name << " " << value << endl;
-    }
+    //for(const auto& [name, value]: post){
+        //cout << name << " " << value << endl;
+    //}
     string name = post["r_user"];
     string pwd = post["r_pwd"];
 
-    cout << name << " " << pwd << endl;
+    //cout << name << " " << pwd << endl;
     if(mysql.userAdd(name, pwd)){
         path_ = "/main.html";
     }else{
         path_ = "/error.html";
     }
-    cout << "注册" << endl;
+    //cout << "注册" << endl;
     isStatic = true;
 }
 

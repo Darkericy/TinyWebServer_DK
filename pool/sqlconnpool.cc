@@ -1,4 +1,4 @@
-#include "SqlConnPool.h"
+#include "sqlconnpool.h"
 //这里的namespace可能应该只是个摆设，所以我先把他注释掉
 //using namespace std;
 
